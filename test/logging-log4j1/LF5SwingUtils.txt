@@ -1,0 +1,93 @@
+Select the specified row in the given JTable and scroll the given JScrollPane to the row. 
+1. Identify the specified row in the JTable based on user input.
+2. Select the identified row in the JTable.
+3. Scroll the JScrollPane to display the selected row.
+LF5SwingUtils.java void selectRow(int row, ListSelectionModel model)
+LF5SwingUtils.java boolean contains(int row, TableModel model)
+LF5SwingUtils.java void makeVerticalScrollBarTrack(JScrollPane pane)
+LF5SwingUtils.java void repaintLater(final JComponent component)
+LF5SwingUtils.java void moveAdjustable(int location, Adjustable scrollBar)
+Function Header: void selectAndScrollRow(int row, JTable table, JScrollPane scrollPane)
+
+Description:
+Selects the specified row in the JTable based on user input and scrolls the JScrollPane to display the selected row.
+
+Reuse Functions or Entities:
+LF5SwingUtils.java void selectRow(int row, ListSelectionModel model)
+LF5SwingUtils.java void makeVerticalScrollBarTrack(JScrollPane pane)
+
+Parameters:
+row: The index of the row to be selected and scrolled to.
+table: The JTable in which the row needs to be selected.
+scrollPane: The JScrollPane associated with the JTable for scrolling.
+
+Return Value:
+void
+
+---
+
+Function Header: void identifyAndSelectRow(int userInput, JTable table)
+
+Description:
+Identifies the specified row in the JTable based on user input and selects it.
+
+Reuse Functions or Entities:
+LF5SwingUtils.java boolean contains(int row, TableModel model)
+
+Parameters:
+userInput: The user input specifying the row to be identified and selected.
+table: The JTable in which the row needs to be identified and selected.
+
+Return Value:
+void
+
+---
+
+Function Header: void scrollTableToRow(int row, JScrollPane scrollPane)
+
+Description:
+Scrolls the JScrollPane to display the specified row in the JTable.
+
+Reuse Functions or Entities:
+LF5SwingUtils.java void makeVerticalScrollBarTrack(JScrollPane pane)
+
+Parameters:
+row: The index of the row to be displayed in the JScrollPane.
+scrollPane: The JScrollPane to be scrolled to display the specified row.
+
+Return Value:
+void
+```java
+void selectAndScrollRow(int row, JTable table, JScrollPane scrollPane) {
+    LF5SwingUtils.selectRow(row, table.getSelectionModel());
+    LF5SwingUtils.makeVerticalScrollBarTrack(scrollPane);
+}
+
+void identifyAndSelectRow(int userInput, JTable table) {
+    if (LF5SwingUtils.contains(userInput, table.getModel())) {
+        int row = userInput; // Assuming userInput is the row index
+        table.getSelectionModel().setSelectionInterval(row, row);
+    }
+}
+
+void scrollTableToRow(int row, JScrollPane scrollPane) {
+    LF5SwingUtils.makeVerticalScrollBarTrack(scrollPane);
+    JViewport viewport = scrollPane.getViewport();
+    Rectangle rect = table.getCellRect(row, 0, true);
+    viewport.setViewPosition(new Point(0, rect.y));
+}
+```----------------------------------------
+In the `scrollTableToRow` method, add a check to ensure that the row index is within the valid range before attempting to scroll to that row:
+
+```java
+void scrollTableToRow(int row, JScrollPane scrollPane) {
+    LF5SwingUtils.makeVerticalScrollBarTrack(scrollPane);
+    JViewport viewport = scrollPane.getViewport();
+    JTable table = (JTable) viewport.getView();
+
+    if (row >= 0 && row < table.getRowCount()) {
+        Rectangle rect = table.getCellRect(row, 0, true);
+        viewport.setViewPosition(new Point(0, rect.y));
+    }
+}
+```

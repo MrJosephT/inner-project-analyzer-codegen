@@ -1,0 +1,34 @@
+Follow the dayStep to reformat the time bucket with TIME_BUCKET_FORMATTER.
+1. Implement dayStep to reformat time bucket with TIME_BUCKET_FORMATTER.
+2. Decompose user requirements into sub-requirements.
+3. Each step should be concise, maximum 10 words.
+TimeSeriesUtils.java long compressDateTime(DateTime time, int dayStep)
+TimeSeriesUtils.java String writeIndexName(Model model, long timeBucket)
+DateTime.java DateTime minusDays(int days)
+DateTimeFormatter.java DateTime parseDateTime(String text)
+TimeSeriesUtils.java String[] superDatasetIndexNames(String indexName, long startSecondTB, long endSecondTB)
+TimeSeriesUtils.java
+Days.java
+DateTimeFormatter.java
+DateTime.java
+Function Header: long dayStep(DateTime time, int dayStep)
+
+Description:
+Compresses DateTime into a smaller time bucket based on dayStep for optimization.
+
+Reuse Functions or Entities:
+- DateTime.java: DateTime minusDays(int days)
+- TimeSeriesUtils.java: DateTimeFormatter TIME_BUCKET_FORMATTER
+
+Parameters:
+time: DateTime object to compress
+dayStep: Integer specifying the compression level
+
+Return Value:
+Compressed DateTime object.
+public long dayStep(DateTime time, int dayStep) {
+    return time.minusDays(dayStep);
+}----------------------------------------
+public long dayStep(DateTime time, int dayStep) {
+    return time.minusDays(dayStep).getMillis();
+}

@@ -1,0 +1,17 @@
+{
+  "employee_create": "Develop the capability to add new employees, ensuring alignment with both controller and service layers' business logic within the project.",
+  "employee_update": "Enhance the system to enable the modification of employee details while maintaining consistency across both controller and service layers within the project.",
+  "employee_read": "Implement functionality to retrieve employee information, ensuring coherence between the controller and service layers' business logic within the project.",
+  "category_create": "Integrate functionality to create new categories, ensuring seamless integration with both controller and service layers' business logic within the project.",
+  "category_update": "Refine the system to facilitate the updating of category details, ensuring consistency across both controller and service layers within the project.",
+  "category_read": "Implement functionality to access category information, ensuring harmonization between the controller and service layers' business logic within the project.",
+  "category_delete": "Incorporate functionality to remove categories, ensuring consistency between both controller and service layers' business logic within the project.",
+  "setmeal_create": "Implement the capability to create new set meals, ensuring coherence between the controller and service layers' business logic within the project.",
+  "setmeal_update": "Refine the system to allow for the updating of set meal details while maintaining coherence between both controller and service layers within the project.",
+  "setmeal_read": "Develop functionality to access set meal information, ensuring alignment between the controller and service layers' business logic within the project.",
+  "setmeal_delete": "Integrate functionality to delete set meals, ensuring consistency between both controller and service layers' business logic within the project.",
+  "dish_create": "Implement functionality to add new dishes, ensuring alignment with both controller and service layers' business logic within the project.",
+  "dish_update": "Enhance the system to allow for the updating of dish details, ensuring coherence across both controller and service layers within the project.",
+  "dish_read": "Develop functionality to retrieve dish information, ensuring consistency between the controller and service layers' business logic within the project.",
+  "dish_delete": "Incorporate functionality to delete dishes, ensuring coherence between both controller and service layers' business logic within the project."
+}

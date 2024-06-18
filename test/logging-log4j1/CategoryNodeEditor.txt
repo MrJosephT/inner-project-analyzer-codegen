@@ -1,0 +1,30 @@
+Remove any inactive nodes from the Category tree and return the number of removed nodes
+1. Identify inactive nodes in Category tree.
+2. Remove inactive nodes from Category tree.
+3. Return the number of removed nodes from Category tree.
+CategoryNodeEditor.java int removeUnusedNodes()
+CategoryNodeEditor.java void showPopup(CategoryNode node, int x, int y)
+CategoryNodeEditor.java void collapse(CategoryNode node)
+CategoryNodeEditor.java Object getDisplayedProperties(CategoryNode node)
+CategoryNodeEditor.java void collapseDescendants(CategoryNode node)
+CategoryNodeEditor.java
+Function Header: int removeUnusedNodes()
+
+Description:
+Remove inactive leaf nodes with no records from the Category tree and return the number of removed nodes.
+
+Reuse Functions or Entities:
+- CategoryNodeEditor.java
+
+Parameters:
+None
+
+Return Value:
+Number of removed nodes (int)
+int removeUnusedNodes() {
+    return CategoryNodeEditor.removeUnusedNodes();
+}----------------------------------------
+// This method removes any unused nodes from the CategoryNodeEditor
+int removeUnusedNodes() {
+    return CategoryNodeEditor.removeUnusedNodes();
+}

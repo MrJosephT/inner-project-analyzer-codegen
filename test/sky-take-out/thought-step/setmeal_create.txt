@@ -1,0 +1,46 @@
+Implement the capability to create new set meals, ensuring coherence between the controller and service layers' business logic within the project.
+1. Define data structure for set meals including items and prices.
+2. Implement controller method to create new set meals.
+3. Develop service layer logic to validate and save set meals.
+SetmealService.java List<Setmeal> list(Setmeal setmeal)
+SetmealServiceImpl.java void update(SetmealDTO setmealDTO)
+SetmealMapper.java List<Setmeal> list(Setmeal setmeal)
+SetmealDishMapper.java void insertBatch(List<SetmealDish> setmealDishes)
+SetmealMapper.java List<DishItemVO> getDishItemBySetmealId(Long setmealId)
+DishVO.java
+DishDTO.java
+OrderDetail.java
+SetmealDTO.java
+Function Header: void createSetMeal(SetmealDTO setmealDTO)
+
+Description:
+Create a new set meal with associated dishes in the database for a catering project.
+
+Reuse Functions or Entities:
+- SetmealService.java
+- SetmealServiceImpl.java
+- SetmealMapper.java
+- SetmealDishMapper.java
+- SetmealDTO.java
+
+Parameters:
+setmealDTO: Data transfer object containing set meal details and associated dishes.
+
+Return Value:
+void
+```java
+public void createSetMeal(SetmealDTO setmealDTO) {
+    // implementation code here
+}
+```----------------------------------------
+```java
+public void createSetMeal(SetmealDTO setmealDTO) {
+    SetMeal setMeal = new SetMeal();
+    setMeal.setName(setmealDTO.getName());
+    setMeal.setDescription(setmealDTO.getDescription());
+    setMeal.setPrice(setmealDTO.getPrice());
+    
+    // Assuming there is a SetMealRepository to save the set meal
+    setMealRepository.save(setMeal);
+}
+```

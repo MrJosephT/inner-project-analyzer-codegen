@@ -1,0 +1,36 @@
+Return the first index of the searchStr in the given string.
+1. Find the length of the searchStr.
+2. Iterate through the given string to find the searchStr.
+3. Return the index of the first occurrence of the searchStr.
+StringUdfSource.java int indexOfWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java int lastIndexOf(String str, String searchStr)
+StringUdfSource.java int lastIndexOfIgnoreCase(String str, String searchStr)
+StringUdfSource.java int lastIndexOfIgnoreCaseWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java boolean containsAny(String str, List<String> searchStrArray)
+StringUdfSource.java
+StringUtils.java
+Function Header: StringUdfSource.java int indexOf(String str, String searchStr)
+
+Description:
+Return the first index of the searchStr in the given string.
+
+Reuse Functions or Entities:
+- StringUdfSource.java int indexOfWithStart(String str, String searchStr, int startPos)
+
+Parameters:
+str: The given string to search within.
+searchStr: The string to search for.
+startPos: The starting position to search from.
+
+Return Value:
+The index of the first occurrence of the searchStr in the given string.
+public int indexOf(String str, String searchStr) {
+    return indexOfWithStart(str, searchStr, 0);
+}----------------------------------------
+public int indexOf(String str, String searchStr) {
+    return indexOfWithStart(str, searchStr, 0);
+}
+
+public int indexOfWithStart(String str, String searchStr, int startIndex) {
+    return str.indexOf(searchStr, startIndex);
+}

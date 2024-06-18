@@ -1,0 +1,4 @@
+{
+    "long mTimeStamp,Priority mPriority,String mCategoryName,String mNDC,String mThreadName,String mMessage,String[] mThrowableStrRep,String mLocationDetails": "EventDetails.java",
+    "Logger LOG=Logger.getLogger(MyTableModel.class),Comparator MY_COMP=newComparator(){},String[] COL_NAMES={\"Time\",\"Priority\",\"Trace\",\"Category\",\"NDC\",\"Message\"},EventDetails[] EMPTY_LIST=newEventDetails[]{},DateFormat DATE_FORMATTER=DateFormat.getDateTimeInstance(DateFormat.SHORT,DateFormat.MEDIUM),Object mLock=newObject(),SortedSet mAllEvents=newTreeSet(MY_COMP),EventDetails[] mFilteredEvents=EMPTY_LIST,List mPendingEvents=newArrayList(),boolean mPaused=false,String mThreadFilter=\"\",String mMessageFilter=\"\",String mNDCFilter=\"\",String mCategoryFilter=\"\",Priority mPriorityFilter=Priority.DEBUG": "MyTableModel.java"
+}

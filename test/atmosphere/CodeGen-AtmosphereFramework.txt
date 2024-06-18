@@ -1,0 +1,35 @@
+Check if there is already an interceptor in a given list that belongs to the same class as the provided one. Return true if such an interceptor exists; otherwise, return false.
+1. Check if any interceptor in list belongs to same class.
+2. Compare class of provided interceptor with each in list.
+3. Return true if match found, false otherwise.
+AtmosphereFramework.java boolean checkDuplicate(final AtmosphereInterceptor c)
+AtmosphereFramework.java List<String> excludedInterceptors()
+AtmosphereFramework.java void addInterceptorToAllWrappers(AtmosphereInterceptor c)
+AtmosphereFramework.java void apply(final AtmosphereFramework fwk, final Class<?> c)
+AtmosphereFramework.java void addInterceptorToWrapper(AtmosphereHandlerWrapper wrapper, AtmosphereInterceptor c)
+AtmosphereFramework.java
+Function Header: boolean checkDuplicate(final AtmosphereInterceptor c)
+
+Description:
+Check if a given AtmosphereInterceptor is already present in a list of interceptors within the project.
+
+Reuse Functions or Entities:
+- AtmosphereFramework.java
+- AtmosphereInterceptor
+
+Parameters:
+c: The AtmosphereInterceptor to check for duplicates.
+
+Return Value:
+True if a duplicate interceptor is found, false otherwise.
+public boolean checkDuplicate(final AtmosphereInterceptor c) {
+    return AtmosphereFramework.getInstance().interceptors.contains(c);
+}----------------------------------------
+public boolean checkDuplicate(final AtmosphereInterceptor c) {
+    for (AtmosphereInterceptor interceptor : AtmosphereFramework.getInstance().interceptors) {
+        if (interceptor.equals(c)) {
+            return true;
+        }
+    }
+    return false;
+}

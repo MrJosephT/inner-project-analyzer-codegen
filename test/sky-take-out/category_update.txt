@@ -1,0 +1,11 @@
+public void update(CategoryDTO categoryDTO) {
+    // code to update category details in the project database
+    Category category = categoryRepository.findById(categoryDTO.getId());
+    if(category != null) {
+        category.setName(categoryDTO.getName());
+        category.setDescription(categoryDTO.getDescription());
+        categoryRepository.save(category);
+    } else {
+        // handle error if category is not found
+    }
+}

@@ -1,0 +1,43 @@
+Implement an interceptor within the Atmosphere framework to automatically suspend the corresponding resource based on the request's transport method.
+1. Identify the transport method used in the incoming request.
+2. Determine the corresponding resource to be suspended based on transport.
+3. Implement logic to automatically suspend the identified resource.
+Utils.java boolean twoConnectionsTransport(AtmosphereResource.TRANSPORT t)
+Utils.java boolean resumableTransport(AtmosphereResource.TRANSPORT t)
+AtmosphereResourceLifecycleInterceptor.java void postInspect(final AtmosphereResource r)
+AtmosphereResource.java AtmosphereResource suspend(long timeout)
+AtmosphereResource.java AtmosphereResource suspend(long timeout, TimeUnit timeunit)
+AtmosphereResourceImpl.java
+AtmosphereResourceLifecycleInterceptor.java
+Action.java
+AtmosphereResourceEventListenerAdapter.java
+Function Header: AtmosphereResourceLifecycleInterceptor.java void suspendResourceBasedOnTransport(final AtmosphereResource r)
+
+Description:
+Implement an interceptor to automatically suspend the corresponding resource based on the request's transport method.
+
+Reuse Functions or Entities:
+- AtmosphereResourceLifecycleInterceptor.java void postInspect(final AtmosphereResource r)
+- AtmosphereResource.java AtmosphereResource suspend(long timeout)
+- AtmosphereResource.java AtmosphereResource suspend(long timeout, TimeUnit timeunit)
+- Action.java
+- AtmosphereResourceImpl.java
+
+Parameters:
+- AtmosphereResource r: The AtmosphereResource to be inspected for suspension based on transport method.
+
+Return Value:
+This function does not return any value.
+public void suspendResourceBasedOnTransport(final AtmosphereResource r) {
+    // Implement interceptor logic to suspend resource based on transport method
+    // Use AtmosphereResource suspend method to suspend the resource
+}----------------------------------------
+public void suspendResourceBasedOnTransport(final AtmosphereResource r) {
+    String transport = r.transport().name();
+    
+    if (transport.equals("LONG_POLLING")) {
+        r.suspend();
+    } else {
+        // Do nothing for other transport methods
+    }
+}

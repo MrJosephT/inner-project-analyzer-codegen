@@ -1,0 +1,22 @@
+{
+    "This function retrieves the first element in a data structure, providing access to the initial data point.": "Pair.java A getFirst()",
+    "Function returns the second element in a pair within a project, supporting data retrieval and manipulation.": "Pair.java B getSecond()",
+    "This function sets the value of the first element in a data structure within a project.": "Pair.java void setFirst(A f)",
+    "This function sets the value of the second variable in a project, allowing for easy manipulation and comparison.": "Pair.java void setSecond(B s)",
+    "This function checks if a specified element is present in the first or second position within a project.": "Pair.java <E> boolean hasElement(E e)",
+    "This function converts a pair of values into a string representation for display or logging purposes.": "Pair.java String toString()",
+    "Function to check if two Pair objects are equal based on their first and second values.": "Pair.java boolean equals(Object o)",
+    "This function calculates a hash code based on the values of two objects, used for efficient data retrieval.": "Pair.java int hashCode()",
+    "Creates a pair of two objects for use in the project, simplifying data organization and manipulation.": "Pair.java <A, B> Pair<A, B> of(A a, B b)",
+    "Function to add upper bounds for keys in a project, limiting their values within specified limits.": "Distributor.java void addUpperBound(Function<K, Integer> upperBound)",
+    "Adds a lower bound function to the project for summarizing data within specified limits.": "Distributor.java void addLowerBound(Function<K, Integer> lowerBound)",
+    "Function computes lower bounds for a list of keys based on multiple functions in project context.": "Distributor.java List<Integer> computeLowerBounds(List<K> keys)",
+    "Function computes upper bounds for keys using a list of functions, essential for project optimization and analysis.": "Distributor.java List<Integer> computeUpperBounds(List<K> keys)",
+    "Function distributes values among keys based on lower and upper bounds, ensuring feasibility and randomness.": "Distributor.java List<Integer> getDistribution(List<K> keys, final int valueNum)",
+    "This function creates a new HashMap with an expected size to optimize performance and memory usage in the project.": "CollectionUtil.java <K, V> HashMap<K, V> newHashMapWithExpectedSize(int expectedSize)",
+    "This function creates a new LinkedHashMap with an expected size, optimizing memory usage in the project.": "CollectionUtil.java <K, V> LinkedHashMap<K, V> newLinkedHashMapWithExpectedSize(int expectedSize)",
+    "This function creates a new HashSet with an expected size, optimizing memory allocation in a project.": "CollectionUtil.java <E> HashSet<E> newHashSetWithExpectedSize(int expectedSize)",
+    "This function creates a new LinkedHashSet with an expected size, optimizing memory allocation in the project.": "CollectionUtil.java <E> LinkedHashSet<E> newLinkedHashSetWithExpectedSize(int expectedSize)",
+    "Function calculates capacity needed for a HashMap based on size, considering default load factor.": "CollectionUtil.java int capacityForSize(int size)",
+    "Function retrieves element at specified index from iterable, handling both List and Iterator implementations.": "CollectionUtil.java <E> E getElement(Iterable<E> iterable, int index)"
+}

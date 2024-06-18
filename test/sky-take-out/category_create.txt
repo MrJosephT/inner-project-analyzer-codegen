@@ -1,0 +1,6 @@
+public void create(CategoryDTO categoryDTO) {
+    Category category = new Category();
+    category.setName(categoryDTO.getName());
+    category.setDescription(categoryDTO.getDescription());
+    categoryRepository.save(category);
+}

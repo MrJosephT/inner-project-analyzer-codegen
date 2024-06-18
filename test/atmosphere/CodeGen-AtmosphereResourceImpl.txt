@@ -1,0 +1,36 @@
+This involves adding an instance of AtmosphereResourceEventListener to a list of listeners associated with the resource. Upon completion, return the AtmosphereResource object that initiated the function call.
+1. Add AtmosphereResourceEventListener to list of resource listeners.
+2. Return the AtmosphereResource object that initiated the function call.
+AtmosphereResourceImpl.java AtmosphereResourceEventImpl getAtmosphereResourceEvent()
+AtmosphereResourceImpl.java AtmosphereResource notifyListeners()
+AtmosphereResourceImpl.java AtmosphereResource addEventListener(AtmosphereResourceEventListener e)
+AtmosphereResourceImpl.java AtmosphereResource initialize(AtmosphereConfig config, Broadcaster broadcaster,
+                                         AtmosphereRequest req, AtmosphereResponse response,
+                                         AsyncSupport asyncSupport, AtmosphereHandler atmosphereHandler)
+AtmosphereResourceImpl.java AtmosphereResource notifyListeners(AtmosphereResourceEvent event)
+AtmosphereResourceImpl.java
+Function Header: AtmosphereResourceImpl.java AtmosphereResource addEventListener(AtmosphereResourceEventListener e)
+
+Description:
+Add an instance of AtmosphereResourceEventListener to the list of listeners associated with the resource.
+
+Reuse Functions or Entities:
+- AtmosphereResourceImpl.java AtmosphereResource addEventListener(AtmosphereResourceEventListener e)
+
+Parameters:
+e: The AtmosphereResourceEventListener to be added to the list of resource listeners.
+
+Return Value:
+AtmosphereResource: The AtmosphereResource object that initiated the function call.
+public AtmosphereResource addEventListener(AtmosphereResourceEventListener e) {
+    // Add the AtmosphereResourceEventListener to the list of listeners
+    // associated with the resource
+    // Return the AtmosphereResource object that initiated the function call
+}----------------------------------------
+public AtmosphereResource addEventListener(AtmosphereResourceEventListener e) {
+    // Add the AtmosphereResourceEventListener to the list of listeners
+    // associated with the resource
+    listeners.add(e);
+    // Return the AtmosphereResource object that initiated the function call
+    return this;
+}

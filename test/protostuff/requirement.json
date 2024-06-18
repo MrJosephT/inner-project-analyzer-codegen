@@ -1,0 +1,6 @@
+{
+    "ProtobufIOUtil":"Write the message to the output stream using the provided protocol buffer output (ProtobufOutput) and LinkedBuffer. Then, return the size of the message.",
+    "StringSerializer":"A static method for writing UTF-8 encoded character sequences is needed. Its functionality includes checking if the given object can accommodate the character sequence to be written. ",
+    "CodedInput":"Implement functionality to read a string from a data stream ",
+    "WriteSession":"Convert data from a LinkedBuffer into a byte array and return it."
+}

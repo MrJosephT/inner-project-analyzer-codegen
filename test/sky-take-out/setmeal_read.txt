@@ -1,0 +1,9 @@
+public interface SetmealService {
+    List<DishItemVO> getDishItemById(Long id);
+
+    void addDishItem(DishItemVO dishItem);
+
+    void updateDishItem(DishItemVO dishItem);
+
+    void deleteDishItem(Long id);
+}

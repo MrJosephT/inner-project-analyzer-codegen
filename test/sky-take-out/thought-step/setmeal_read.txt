@@ -1,0 +1,40 @@
+Develop functionality to access set meal information, ensuring alignment between the controller and service layers' business logic within the project.
+1. Create a method in the service layer to retrieve set meal data.
+2. Implement a corresponding method in the controller layer.
+3. Ensure data retrieval and processing follow business logic guidelines.
+EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+SetmealServiceImpl.java List<DishItemVO> getDishItemById(Long id)
+SetmealServiceImpl.java List<Setmeal> list(Setmeal setmeal)
+SetmealController.java Result save(@RequestBody SetmealDTO setmealDTO)
+SetmealController.java Result<List<DishItemVO>> dishList(@PathVariable("id") Long id)
+DishController.java
+ShoppingCartDTO.java
+OrderDetail.java
+ShoppingCart.java
+Function Header: SetmealService.java List<Setmeal> getSetmealData()
+
+Description:
+Retrieve set meal data from the database for project use, ensuring adherence to business logic guidelines.
+
+Reuse Functions or Entities:
+- SetmealServiceImpl.java List<Setmeal> list(Setmeal setmeal)
+
+Parameters:
+None
+
+Return Value:
+List<Setmeal>: A list of set meals retrieved from the database.
+public interface SetmealService {
+    List<Setmeal> getSetmealData();
+}----------------------------------------
+public interface SetmealService {
+    List<Setmeal> getSetmealData();
+
+    Setmeal getSetmealById(int id);
+
+    void addSetmeal(Setmeal setmeal);
+
+    void updateSetmeal(Setmeal setmeal);
+
+    void deleteSetmeal(int id);
+}

@@ -1,0 +1,13 @@
+```java
+public void createSetmeal(SetmealDTO setmealDTO) {
+    Setmeal setmeal = new Setmeal();
+    setmeal.setName(setmealDTO.getName());
+    setmeal.setDescription(setmealDTO.getDescription());
+    setmeal.setPrice(setmealDTO.getPrice());
+    
+    // Add any additional properties from setmealDTO to setmeal
+    
+    // Save the setmeal to the database
+    setmealRepository.save(setmeal);
+}
+```

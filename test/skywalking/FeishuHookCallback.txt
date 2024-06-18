@@ -1,0 +1,137 @@
+Put the "content" from the  jsonObject to the content
+1. Extract "content" from jsonObject and assign to content variable.
+2. Decompose user requirements into 3 sub-requirements.
+3. Each sub-requirement should be concise, maximum 10 words.
+FeishuHookCallback.java String getRequestBody(FeishuSettings.WebHookUrl webHookUrl, AlarmMessage alarmMessage, String textTemplate)
+JsonObject.java boolean isEmpty()
+JsonObject.java Map<String, JsonElement> asMap()
+JsonObject.java boolean has(String memberName)
+FeishuHookCallback.java void doAlarm(List<AlarmMessage> alarmMessages) throws Exception
+JsonObject.java
+FeishuHookCallback.java
+Function Header: FeishuHookCallback.java String getRequestBody(FeishuSettings.WebHookUrl webHookUrl, AlarmMessage alarmMessage, String textTemplate)
+
+Description:
+Generates a request body for a Feishu webhook with optional encryption.
+
+Reuse Functions or Entities:
+- FeishuSettings.WebHookUrl
+- AlarmMessage
+
+Parameters:
+webHookUrl: Feishu webhook URL
+alarmMessage: Alarm message object
+textTemplate: Template for the text to be included in the request body
+
+Return Value:
+String: Request body for the Feishu webhook
+
+---
+
+Function Header: JsonObject.java boolean isEmpty()
+
+Description:
+Checks if the list of members is empty in the project.
+
+Reuse Functions or Entities:
+- JsonObject
+
+Parameters:
+None
+
+Return Value:
+boolean: True if the list of members is empty, false otherwise
+
+---
+
+Function Header: JsonObject.java Map<String, JsonElement> asMap()
+
+Description:
+Expose underlying map with non-null keys and values for project context.
+
+Reuse Functions or Entities:
+- JsonObject
+
+Parameters:
+None
+
+Return Value:
+Map<String, JsonElement>: Map with non-null keys and values
+
+---
+
+Function Header: JsonObject.java boolean has(String memberName)
+
+Description:
+Checks if a given member name exists in the project's list of members.
+
+Reuse Functions or Entities:
+- JsonObject
+
+Parameters:
+memberName: Name of the member to check for existence
+
+Return Value:
+boolean: True if the member exists, false otherwise
+
+---
+
+Function Header: FeishuHookCallback.java void doAlarm(List<AlarmMessage> alarmMessages)
+
+Description:
+Groups messages, generates request body, and posts to Feishu webhooks.
+
+Reuse Functions or Entities:
+- AlarmMessage
+
+Parameters:
+alarmMessages: List of alarm messages to be sent
+
+Return Value:
+void
+```java
+public String getRequestBody(FeishuSettings.WebHookUrl webHookUrl, AlarmMessage alarmMessage, String textTemplate) {
+    // implementation here
+}
+
+public boolean isEmpty() {
+    // implementation here
+}
+
+public Map<String, JsonElement> asMap() {
+    // implementation here
+}
+
+public boolean has(String memberName) {
+    // implementation here
+}
+
+public void doAlarm(List<AlarmMessage> alarmMessages) {
+    // implementation here
+}
+```----------------------------------------
+```java
+public String getRequestBody(FeishuSettings.WebHookUrl webHookUrl, AlarmMessage alarmMessage, String textTemplate) {
+    // implementation here
+    return null;
+}
+
+public boolean isEmpty() {
+    // implementation here
+    return false;
+}
+
+public Map<String, JsonElement> asMap() {
+    // implementation here
+    return null;
+}
+
+public boolean has(String memberName) {
+    // implementation here
+    return false;
+}
+
+public void doAlarm(List<AlarmMessage> alarmMessages) {
+    // implementation here
+}
+```

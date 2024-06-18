@@ -1,0 +1,49 @@
+Divide a box into two equal boxes on the x axis
+1. Split box in half horizontally to create two equal boxes.
+2. Ensure both resulting boxes have equal width measurements.
+3. Verify that both new boxes are identical in size.
+Box2D.java Box2D of(double width, double height)
+Box2D.java Box2D of(double x, double y, double width, double height)
+Box2D.java boolean equals(Object obj)
+Boxes.java boolean containsPoint(Box2D box, Point2D p)
+Boxes.java boolean containsPoint(Box2D box, Point2D p, Comparator<Double> comparator)
+Pair.java
+Box2D.java
+
+Function Header: Box2D[] divideBox(Box2D box)
+
+Description:
+Divide a box into two equal boxes on the x axis.
+
+Reuse Functions or Entities:
+- Box2D.java Box2D of(double width, double height)
+- Box2D.java Box2D of(double x, double y, double width, double height)
+- Box2D.java boolean equals(Object obj)
+
+Parameters:
+box: The original box to be divided into two equal boxes.
+
+Return Value:
+An array of two Box2D objects representing the two equal boxes created after division.
+```java
+public Box2D[] divideBox(Box2D box) {
+    double width = box.getWidth() / 2;
+    double height = box.getHeight();
+    
+    Box2D box1 = Box2D.of(box.getX(), box.getY(), width, height);
+    Box2D box2 = Box2D.of(box.getX() + width, box.getY(), width, height);
+    
+    return new Box2D[] {box1, box2};
+}
+```----------------------------------------
+```java
+public Box2D[] divideBox(Box2D box) {
+    double width = box.getWidth() / 2;
+    double height = box.getHeight();
+    
+    Box2D box1 = Box2D.of(box.getX(), box.getY(), width, height);
+    Box2D box2 = Box2D.of(box.getX() + width, box.getY(), width, height);
+    
+    return new Box2D[] {box1, box2};
+}
+```

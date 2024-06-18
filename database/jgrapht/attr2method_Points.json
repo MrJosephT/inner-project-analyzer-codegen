@@ -1,0 +1,5 @@
+{
+    "long serialVersionUID=-5410937389829502498L,double x,y": "Point2D.java",
+    "ToleranceDoubleComparator TOLERANCE_DOUBLE_COMPARATOR=newToleranceDoubleComparator(1e-9)": "Points.java",
+    "long serialVersionUID=-3819451375975842372L,double DEFAULT_EPSILON=1e-9,double epsilon": "ToleranceDoubleComparator.java"
+}

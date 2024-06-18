@@ -1,0 +1,5 @@
+{
+    "String PATH_OPTION=\"Path\",String path=null,String PREFIX_OPTION=\"Prefix\",String prefix=\"l4j_\",String SUFFIX_OPTION=\"Suffix\",String suffix=\".tmp\",File dir=null": "TempFileAppender.java",
+    "Layout layout,String name,Priority threshold,ErrorHandler errorHandler=newOnlyOnceErrorHandler(),Filter headFilter,Filter tailFilter,boolean closed=false": "AppenderSkeleton.java",
+    "long startTime=System.currentTimeMillis(),String fqnOfCategoryClass,Category logger,String categoryName,Priority level,String ndc,Hashtable mdcCopy,boolean ndcLookupRequired=true,boolean mdcCopyLookupRequired=true,Object message,String renderedMessage,String threadName,ThrowableInformation throwableInfo,long timeStamp,LocationInfo locationInfo,long serialVersionUID=-868428216207166145L,Integer[] PARAM_ARRAY=newInteger[1],String TO_LEVEL=\"toLevel\",Class[] TO_LEVEL_PARAMS=newClass[]{int.class},Hashtable methodCache=newHashtable(3)": "LoggingEvent.java"
+}

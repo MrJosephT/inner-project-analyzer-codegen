@@ -1,0 +1,9 @@
+public Dish getDishById(Long id) {
+    Dish dish = dishMapper.getById(id);
+    
+    if(dish == null) {
+        throw new RuntimeException("Dish not found with id: " + id);
+    }
+    
+    return dish;
+}

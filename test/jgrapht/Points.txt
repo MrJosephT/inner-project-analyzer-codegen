@@ -1,0 +1,37 @@
+Using TOLERANCE_DOUBLE_COMPARATOR to compare two points for equality,return true the point p1 is equal to another point p2,otherwise return false
+1. Define TOLERANCE_DOUBLE_COMPARATOR for comparing double values with tolerance.
+2. Implement method to compare x and y coordinates of two points.
+3. Use TOLERANCE_DOUBLE_COMPARATOR to compare both coordinates for equality.
+Point2D.java boolean equals(Object obj)
+Point2D.java int hashCode()
+ToleranceDoubleComparator.java int compare(Double o1, Double o2)
+Points.java Point2D add(Point2D a, Point2D b)
+Points.java Point2D subtract(Point2D a, Point2D b)
+ToleranceDoubleComparator.java
+Points.java
+Point2D.java
+
+Function Header: boolean comparePoints(Point2D p1, Point2D p2)
+
+Description:
+Compares x and y coordinates of two Point2D objects using TOLERANCE_DOUBLE_COMPARATOR.
+
+Reuse Functions or Entities:
+- ToleranceDoubleComparator.java int compare(Double o1, Double o2)
+- Point2D.java
+
+Parameters:
+p1: Point2D object representing the first point
+p2: Point2D object representing the second point
+
+Return Value:
+true if the x and y coordinates of p1 are equal to p2 within tolerance, false otherwise.
+public boolean comparePoints(Point2D p1, Point2D p2) {
+    return ToleranceDoubleComparator.compare(p1.getX(), p2.getX()) == 0 
+        && ToleranceDoubleComparator.compare(p1.getY(), p2.getY()) == 0;
+}----------------------------------------
+public boolean comparePoints(Point2D p1, Point2D p2) {
+    return ToleranceDoubleComparator.compare(p1.getX(), p2.getX()) == 0 
+        && ToleranceDoubleComparator.compare(p1.getY(), p2.getY()) == 0
+        && ToleranceDoubleComparator.compare(p1.getZ(), p2.getZ()) == 0; // Add comparison for Z coordinate
+}

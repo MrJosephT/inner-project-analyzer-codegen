@@ -1,0 +1,9 @@
+{
+    "Attaches an AdjustmentListener to a scroll bar for tracking adjustments in a project's user interface.": "LF5SwingUtils.java void makeScrollBarTrack(Adjustable scrollBar)",
+    "This function customizes the vertical scroll bar track of a JScrollPane component in a project.": "LF5SwingUtils.java void makeVerticalScrollBarTrack(JScrollPane pane)",
+    "Check if a given row index exists in a table model to prevent errors in project operations.": "LF5SwingUtils.java boolean contains(int row, TableModel model)",
+    "Selects a specific row in a table using the provided ListSelectionModel in a project.": "LF5SwingUtils.java void selectRow(int row, ListSelectionModel model)",
+    "Function adjusts scroll bar to specified location within project interface, enhancing user experience and navigation.": "LF5SwingUtils.java void moveAdjustable(int location, Adjustable scrollBar)",
+    "Asynchronously repaints a Swing component to update its appearance in a project.": "LF5SwingUtils.java void repaintLater(final JComponent component)",
+    "This function triggers a repaint of a component within the project to update its display.": "LF5SwingUtils.java void run()"
+}

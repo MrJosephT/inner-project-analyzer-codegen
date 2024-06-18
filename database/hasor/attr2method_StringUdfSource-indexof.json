@@ -1,0 +1,4 @@
+{
+    "ClassWriter classWriter,ClassReader sourceClassReader,int majorVersion,String className,int entryCount,Entry[] entries,int constantPoolCount,ByteVector constantPool,int bootstrapMethodCount,ByteVector bootstrapMethods,int typeCount,Entry[] typeTable,int hashCode,Entry next": "StringUtils.java",
+    "Pattern linePattern=Pattern.compile(\"_(\\\\w)\"),Pattern humpPattern=Pattern.compile(\"[A-Z]\")": "StringUdfSource.java"
+}

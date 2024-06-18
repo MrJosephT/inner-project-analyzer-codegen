@@ -1,0 +1,46 @@
+Get a substring from the specified String avoiding exceptions.
+1. Extract a substring from a given String.
+2. Handle potential exceptions such as out-of-bounds index.
+3. Return the extracted substring without causing any errors.
+StringUdfSource.java List<String> split(String str, String separatorChars)
+StringUdfSource.java int indexOfIgnoreCaseWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java String right(String str, int len)
+StringUdfSource.java boolean containsIgnoreCase(String str, String searchStr)
+StringUdfSource.java String left(String str, int len)
+StringUdfSource.java
+StringUtils.java
+Function Header: String getSafeSubstring(String str, int startIndex, int endIndex)
+
+Description:
+Extract a safe substring from a given String without causing exceptions.
+
+Reuse Functions or Entities:
+- StringUdfSource.java int indexOfIgnoreCaseWithStart(String str, String searchStr, int startPos)
+
+Parameters:
+str: The input String from which the substring will be extracted.
+startIndex: The starting index of the substring.
+endIndex: The ending index of the substring.
+
+Return Value:
+The extracted substring from the input String.
+public String getSafeSubstring(String str, int startIndex, int endIndex) {
+    if (str == null || str.isEmpty() || startIndex < 0 || endIndex < 0 || startIndex >= str.length() || endIndex >= str.length() || startIndex > endIndex) {
+        return "";
+    }
+    
+    return str.substring(startIndex, Math.min(endIndex + 1, str.length()));
+}----------------------------------------
+// This method returns a substring of the input string 'str' starting from the 'startIndex' 
+// and ending at the 'endIndex'. If any of the input parameters are invalid, it returns an empty string.
+
+public String getSafeSubstring(String str, int startIndex, int endIndex) {
+    if (str == null || str.isEmpty() || startIndex < 0 || endIndex < 0 || startIndex >= str.length() || endIndex >= str.length() || startIndex > endIndex) {
+        return "";
+    }
+    
+    // Ensure endIndex does not exceed the length of the string
+    endIndex = Math.min(endIndex, str.length() - 1);
+    
+    return str.substring(startIndex, endIndex + 1);
+}

@@ -1,0 +1,36 @@
+Add a new type entry of the given value into the type table of this symbol table. Does nothing if the type table already contains a similar type. Return the index of the type entry in the symbol table.
+1. Add new type entry with given value to type table.
+2. Check if similar type already exists in type table.
+3. Return index of type entry in symbol table.
+SymbolTable.java int addTypeInternal(final Entry entry)
+SymbolTable.java int addUninitializedType(final String value, final int bytecodeOffset)
+SymbolTable.java Symbol addConstantInteger(final int value)
+SymbolTable.java Symbol getType(final int typeIndex)
+SymbolTable.java int addMergedType(final int typeTableIndex1, final int typeTableIndex2)
+SymbolTable.java
+Symbol.java
+Function Header: int addNewTypeEntry(final String value)
+
+Description:
+Add a new type entry with the given value to the type table in the symbol table.
+
+Reuse Functions or Entities:
+SymbolTable.java int addTypeInternal(final Entry entry)
+SymbolTable.java int addUninitializedType(final String value, final int bytecodeOffset)
+SymbolTable.java Symbol getType(final int typeIndex)
+
+Parameters:
+value: The value of the new type entry to be added.
+
+Return Value:
+Returns the index of the type entry in the symbol table.
+```java
+int addNewTypeEntry(final String value) {
+    return addTypeInternal(new Entry(value));
+}
+```----------------------------------------
+```java
+int addNewTypeEntry(final String value, final int quantity) {
+    return addTypeInternal(new Entry(value, quantity));
+}
+```

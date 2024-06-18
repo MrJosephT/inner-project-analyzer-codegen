@@ -1,0 +1,3 @@
+{
+    "int NULL_NODE=-1,Map<V,V> forwardMapping,Map<V,V> backwardMapping,Graph<V,E> graph1,Graph<V,E> graph2": "IsomorphicGraphMapping.java"
+}

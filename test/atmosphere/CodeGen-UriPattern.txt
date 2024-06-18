@@ -1,0 +1,44 @@
+Implement a URI template matching feature. If there is a match between the URL and the pattern, return the matching result. Otherwise, return null.
+1. Extract URI template pattern from user input.
+2. Compare URL with URI template pattern for a match.
+3. Return matching result or null based on comparison.
+UriTemplate.java boolean match(CharSequence uri, Map<String, String> templateVariableToValue) throws
+            IllegalArgumentException
+UriTemplate.java String createURI(Map<String, String> values)
+UriPattern.java boolean match(CharSequence uri, List<String> groupValues)
+UriPattern.java MatchResult match(CharSequence uri)
+UriTemplate.java boolean equals(Object o)
+UriTemplateParser.java
+UriTemplate.java
+UriPattern.java
+UriComponent.java
+
+Function Header: boolean matchUriTemplate(CharSequence uri, Map<String, String> templateVariableToValue)
+
+Description:
+Match URI with template variables to retrieve values for accurate data retrieval in project implementation.
+
+Reuse Functions or Entities:
+- UriTemplate.java boolean match(CharSequence uri, Map<String, String> templateVariableToValue)
+- UriTemplateParser.java
+- UriTemplate.java String createURI(Map<String, String> values)
+- UriPattern.java boolean match(CharSequence uri, List<String> groupValues)
+- UriPattern.java MatchResult match(CharSequence uri)
+- UriTemplate.java boolean equals(Object o)
+
+Parameters:
+uri: The URI to be matched against the template pattern.
+templateVariableToValue: A map containing template variables and their corresponding values.
+
+Return Value:
+Returns true if there is a match between the URI and the template pattern, false otherwise.
+```java
+public boolean matchUriTemplate(CharSequence uri, Map<String, String> templateVariableToValue) {
+    return UriTemplate.match(uri, templateVariableToValue);
+}
+```----------------------------------------
+```java
+public boolean matchUriTemplate(CharSequence uri, Map<String, String> templateVariableToValue) {
+    return UriTemplate.match(uri.toString(), templateVariableToValue);
+}
+```

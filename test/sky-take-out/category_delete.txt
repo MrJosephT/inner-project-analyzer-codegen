@@ -1,0 +1,10 @@
+public void removeCategory(Long categoryId) {
+    Category categoryToRemove = getCategoryById(categoryId);
+    
+    if(categoryToRemove != null) {
+        // Remove category from database
+        categoryRepository.delete(categoryToRemove);
+    } else {
+        throw new IllegalArgumentException("Category not found with id: " + categoryId);
+    }
+}

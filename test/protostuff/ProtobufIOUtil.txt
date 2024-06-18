@@ -1,0 +1,51 @@
+Write the message to the output stream using the provided protocol buffer output (ProtobufOutput) and LinkedBuffer. Then, return the size of the message.
+1. Write message to output stream using ProtobufOutput and LinkedBuffer.
+2. Return size of the message.
+3. Decompose user requirements into 3 sub-requirements.
+ProtobufIOUtil.java <T> int writeListTo(OutputStream out, List<T> messages, Schema<T> schema,
+            LinkedBuffer buffer) throws IOException
+ProtobufIOUtil.java <T> int optWriteDelimitedTo(OutputStream out, T message,
+            Schema<T> schema, LinkedBuffer buffer) throws IOException
+ProtobufIOUtil.java <T> int writeDelimitedTo(DataOutput out, T message, Schema<T> schema)
+            throws IOException
+ProtobufIOUtil.java <T> byte[] toByteArray(T message, Schema<T> schema, LinkedBuffer buffer)
+ProtobufIOUtil.java <T> int writeTo(OutputStream out, T message, Schema<T> schema,
+            LinkedBuffer buffer) throws IOException
+ProtobufOutput.java
+LinkBuffer.java
+Function Header: int writeMessageToOutput(OutputStream out, T message, Schema<T> schema, LinkedBuffer buffer)
+
+Description:
+Writes a message to the output stream using ProtobufOutput and LinkedBuffer, then returns the size of the message.
+
+Reuse Functions or Entities:
+- ProtobufIOUtil.java: writeTo(OutputStream out, T message, Schema<T> schema, LinkedBuffer buffer)
+
+Parameters:
+- out: The output stream to write the message to.
+- message: The message to be written to the output stream.
+- schema: The schema for serializing the message.
+- buffer: The linked buffer for efficient serialization.
+
+Return Value:
+The size of the message written to the output stream.
+int writeMessageToOutput(OutputStream out, T message, Schema<T> schema, LinkedBuffer buffer) {
+    return ProtobufIOUtil.writeTo(out, message, schema, buffer);
+}----------------------------------------
+/**
+ * Writes a message to the output stream using Protobuf serialization.
+ * 
+ * @param out the output stream to write the message to
+ * @param message the message object to be serialized
+ * @param schema the schema of the message object
+ * @param buffer the linked buffer to use for serialization
+ * @return the number of bytes written to the output stream
+ */
+int writeMessageToOutput(OutputStream out, T message, Schema<T> schema, LinkedBuffer buffer) {
+    try {
+        return ProtobufIOUtil.writeTo(out, message, schema, buffer);
+    } catch (IOException e) {
+        e.printStackTrace();
+        return -1; // return -1 to indicate an error occurred
+    }
+}

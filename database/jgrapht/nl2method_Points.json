@@ -1,0 +1,16 @@
+{
+    "This function returns the number of dimensions in a project, which is important for data analysis and visualization.": "Point2D.java int getNumDimensions()",
+    "This function returns the value of the x-coordinate within the project context.": "Point2D.java double getX()",
+    "This function returns the y-coordinate of a point in a project involving geometric calculations.": "Point2D.java double getY()",
+    "Function calculates hash code based on x and y coordinates for object identification and storage optimization.": "Point2D.java int hashCode()",
+    "Function checks if two Point2D objects are equal by comparing their x and y coordinates.": "Point2D.java boolean equals(Object obj)",
+    "Function creates a new Point2D object with specified coordinates. Used for representing points in a 2D space.": "Point2D.java Point2D of(double x, double y)",
+    "This function converts the coordinates of a point into a string format for display purposes.": "Point2D.java String toString()",
+    "Calculate the length of a 2D vector for use in geometric calculations within a project.": "Points.java double length(Point2D v)",
+    "Function adds two 2D points together to calculate a new point within a project.": "Points.java Point2D add(Point2D a, Point2D b)",
+    "Function subtracts coordinates of two points and returns a new point with the result.": "Points.java Point2D subtract(Point2D a, Point2D b)",
+    "This function negates a Point2D object by multiplying its coordinates by -1.": "Points.java Point2D negate(Point2D a)",
+    "Function scalarMultiply multiplies a Point2D object by a scalar value within a mathematical operations utility class.": "Points.java Point2D scalarMultiply(Point2D a, double scalar)",
+    "Function to multiply a Point2D object by a scalar value using a custom multiplication function.": "Points.java <\n        S> Point2D scalarMultiply(Point2D a, S scalar, BiFunction<Double, S, Double> mult)",
+    "Function compares two Double values with a given epsilon value, returning 0 if they are close, else their comparison result.": "ToleranceDoubleComparator.java int compare(Double o1, Double o2)"
+}

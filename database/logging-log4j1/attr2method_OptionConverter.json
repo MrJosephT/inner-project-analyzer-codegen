@@ -1,0 +1,4 @@
+{
+    "String DEBUG_KEY=\"log4j.debug\",String CONFIG_DEBUG_KEY=\"log4j.configDebug\",boolean debugEnabled=false,boolean quietMode=false,String PREFIX=\"log4j: \",String ERR_PREFIX=\"log4j:ERROR \",String WARN_PREFIX=\"log4j:WARN \"": "LogLog.java",
+    "String DELIM_START=\"${\",char DELIM_STOP='}',int DELIM_START_LEN=2,int DELIM_STOP_LEN=1": "OptionConverter.java"
+}

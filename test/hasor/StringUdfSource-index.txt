@@ -1,0 +1,35 @@
+Find the index position of the last occurrence of a specified substring within another string. If the main string is empty, return the value INDEXNOTFOUND.
+1. Find the last occurrence of a specified substring in a string.
+2. Return the index position of the last occurrence found.
+3. If main string is empty, return INDEXNOTFOUND.
+StringUdfSource.java int lastIndexOfIgnoreCase(String str, String searchStr)
+StringUdfSource.java int lastIndexOfIgnoreCaseWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java int lastIndexOfWithStart(String str, String searchChar, int startPos)
+StringUdfSource.java int indexOfWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java int indexOfIgnoreCase(String str, String searchStr)
+StringUdfSource.java
+StringUtils.java
+
+Function Header: int lastIndexOfIgnoreCase(String str, String searchStr)
+
+Description:
+Find the last index of a case-insensitive search string within a given string.
+
+Reuse Functions or Entities:
+- StringUdfSource.java int lastIndexOfIgnoreCase(String str, String searchStr)
+
+Parameters:
+- str: The main string to search within.
+- searchStr: The substring to search for.
+
+Return Value:
+Return the index position of the last occurrence found. If the main string is empty, return INDEXNOTFOUND.
+public int lastIndexOfIgnoreCase(String str, String searchStr) {
+    return StringUdfSource.lastIndexOfIgnoreCase(str, searchStr);
+}----------------------------------------
+public int lastIndexOfIgnoreCase(String str, String searchStr) {
+    return StringUdfSource.lastIndexOfIgnoreCase(str, searchStr);
+}
+
+// Description: This method returns the index within the string 'str' of the last occurrence of the string 'searchStr', ignoring case. 
+// If the string 'searchStr' is not found within 'str', it returns -1.

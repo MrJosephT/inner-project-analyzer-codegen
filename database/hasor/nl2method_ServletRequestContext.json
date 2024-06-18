@@ -1,0 +1,6 @@
+{
+    "This function retrieves the character encoding of the request in a project.": "ServletRequestContext.java String getCharacterEncoding()",
+    "This function retrieves the content type of a request in a project, aiding in processing data appropriately.": "ServletRequestContext.java String getContentType()",
+    "This function returns an input stream from a request in a project.": "ServletRequestContext.java InputStream getInputStream() throws IOException",
+    "Returns a string summarizing the content length and type of a file in a project.": "ServletRequestContext.java String toString()"
+}

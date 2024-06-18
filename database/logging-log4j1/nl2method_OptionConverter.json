@@ -1,0 +1,23 @@
+{
+    "Function enables/disables internal debugging for project, aiding in identifying and resolving issues efficiently.": "LogLog.java void setInternalDebugging(boolean enabled)",
+    "Function: Debug\nDescription: Print debug messages if debug mode is enabled and not in quiet mode.": "LogLog.java void debug(String msg)",
+    "Debug function prints messages and stack traces if debug mode is enabled, aiding in troubleshooting within the project.": "LogLog.java void debug(String msg, Throwable t)",
+    "Error function logs error messages in project, with option to suppress in quiet mode.": "LogLog.java void error(String msg)",
+    "Error logging function for displaying error messages and stack traces in project development.": "LogLog.java void error(String msg, Throwable t)",
+    "Sets the quiet mode for logging in the project to control the verbosity of log messages.": "LogLog.java void setQuietMode(boolean quietMode)",
+    "Function warns user with message if not in quiet mode, printing message with warning prefix.": "LogLog.java void warn(String msg)",
+    "Function: warn\nRole: Display warning message and stack trace if provided, in project context.\nDescription: Print warning message and stack trace if provided, in project context.": "LogLog.java void warn(String msg, Throwable t)",
+    "This function concatenates two arrays of strings into a single array, useful for combining data in a project.": "OptionConverter.java String[] concatanateArrays(String[] l, String[] r)",
+    "This function converts special characters in a string to their corresponding escape sequences for display purposes.": "OptionConverter.java String convertSpecialChars(String s)",
+    "Function: Retrieve system property value with default.\nDescription: Handles exceptions and logs if not allowed, used for configuration in project.": "OptionConverter.java String getSystemProperty(String key, String def)",
+    "Instantiate object by key from properties file, returning default value if key not found.": "OptionConverter.java Object instantiateByKey(Properties props, String key, Class superClass,\n\t\t\t\tObject defaultValue)",
+    "Function to convert string value to boolean, with default value, for project configuration settings.": "OptionConverter.java boolean toBoolean(String value, boolean dEfault)",
+    "Converts a string to an integer, handling exceptions, for use in project configurations.": "OptionConverter.java int toInt(String value, int dEfault)",
+    "This function converts a string value to a Level object within a logging framework.": "OptionConverter.java Level toLevel(String value, Level defaultValue)",
+    "Converts a string representing a file size to bytes within a logging utility function.": "OptionConverter.java long toFileSize(String value, long dEfault)",
+    "Function: findAndSubst\nRole: Retrieve and substitute property value with variables in a Properties object.\nDescription: Finds and substitutes a property value with variables in a Properties object.": "OptionConverter.java String findAndSubst(String key, Properties props)",
+    "Instantiate an object by class name, ensuring it is assignable to a specified superclass, with error handling.": "OptionConverter.java Object instantiateByClassName(String className, Class superClass,\n\t\t\t\tObject defaultValue)",
+    "Function substitutes variables in a string using properties, recursively resolving nested variables.": "OptionConverter.java String substVars(String val, Properties props) throws\n                        IllegalArgumentException",
+    "Selects and configures a logger repository using a specified configurator class or default PropertyConfigurator.": "OptionConverter.java void selectAndConfigure(InputStream inputStream, String clazz, LoggerRepository hierarchy)",
+    "Selects and configures a logger based on URL and class, using different configurators in a project.": "OptionConverter.java void selectAndConfigure(URL url, String clazz, LoggerRepository hierarchy)"
+}

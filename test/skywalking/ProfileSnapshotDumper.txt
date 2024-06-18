@@ -1,0 +1,33 @@
+Load the thread snapshots from the given file in the specified time range,and return the list of those thread snapshots.
+1. Read file to extract thread snapshots within specified time range.
+2. Filter thread snapshots based on specified time range.
+3. Return list of filtered thread snapshots within specified time range.
+SegmentProfileAnalyzeQuery.java
+Function Header: loadThreadSnapshots(String filePath, String startTime, String endTime)
+
+Description:
+Load thread snapshots from file within specified time range and return filtered list of snapshots.
+
+Reuse Functions or Entities:
+- SegmentProfileAnalyzeQuery.java
+
+Parameters:
+- filePath: Path to the file containing thread snapshots
+- startTime: Start time of the specified time range
+- endTime: End time of the specified time range
+
+Return Value:
+List of filtered thread snapshots within the specified time range.
+```java
+public List<ThreadSnapshot> loadThreadSnapshots(String filePath, String startTime, String endTime) {
+    return SegmentProfileAnalyzeQuery.loadThreadSnapshots(filePath, startTime, endTime);
+}
+```----------------------------------------
+```java
+public List<ThreadSnapshot> loadThreadSnapshots(String filePath, String startTime, String endTime) {
+    if (filePath == null || startTime == null || endTime == null) {
+        throw new IllegalArgumentException("File path, start time, and end time must not be null");
+    }
+    return SegmentProfileAnalyzeQuery.loadThreadSnapshots(filePath, startTime, endTime);
+}
+```

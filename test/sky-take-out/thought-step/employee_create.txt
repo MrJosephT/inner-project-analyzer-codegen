@@ -1,0 +1,53 @@
+Develop the capability to add new employees, ensuring alignment with both controller and service layers' business logic within the project.
+1. Create employee object with required information.
+2. Validate employee data against business rules.
+3. Add employee to database with proper error handling.
+EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+EmployeeService.java Employee getById(Long id)
+EmployeeMapper.java Employee getById(Long id)
+EmployeeServiceImpl.java Employee login(EmployeeLoginDTO employeeLoginDTO)
+EmployeeMapper.java void update(Employee employee)
+EmployeeLoginVO.java
+BusinessDataVO.java
+EmployeeDTO.java
+JwtProperties.java
+
+Function Header: void addEmployee(EmployeeDTO employeeDTO)
+
+Description:
+Add new employee to database with proper validation and error handling.
+
+Reuse Functions or Entities:
+- EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+- EmployeeDTO.java:Long id,String username,String name,String phone,String sex,String idNumber
+
+Parameters:
+employeeDTO: EmployeeDTO object containing employee information to be added to the database.
+
+Return Value:
+void
+public void addEmployee(EmployeeDTO employeeDTO) {
+    // Add new employee to database with proper validation and error handling
+    // Reuse EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+    // Reuse EmployeeDTO.java:Long id,String username,String name,String phone,String sex,String idNumber
+    
+    // Your code here
+}----------------------------------------
+public void addEmployee(EmployeeDTO employeeDTO) {
+    if(employeeDTO != null) {
+        if(employeeDTO.getUsername() != null && !employeeDTO.getUsername().isEmpty() &&
+           employeeDTO.getName() != null && !employeeDTO.getName().isEmpty() &&
+           employeeDTO.getPhone() != null && !employeeDTO.getPhone().isEmpty() &&
+           employeeDTO.getSex() != null && !employeeDTO.getSex().isEmpty() &&
+           employeeDTO.getIdNumber() != null && !employeeDTO.getIdNumber().isEmpty()) {
+            
+            // Call update method to add new employee to database
+            update(employeeDTO);
+            
+        } else {
+            System.out.println("Error: EmployeeDTO fields cannot be null or empty");
+        }
+    } else {
+        System.out.println("Error: EmployeeDTO cannot be null");
+    }
+}

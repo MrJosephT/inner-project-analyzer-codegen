@@ -1,0 +1,38 @@
+Enhance the system to allow for the updating of dish details, ensuring coherence across both controller and service layers within the project.
+1. Implement update functionality in dish controller.
+2. Create update method in dish service for data consistency.
+3. Ensure updated dish details are reflected in the system.
+DishMapper.java void update(Dish dish)
+SetmealDishMapper.java void update(SetmealDish dish)
+SetmealServiceImpl.java void update(SetmealDTO setmealDTO)
+DishServiceImpl.java void updateWithFlavor(DishDTO dishDTO)
+SetmealService.java void saveWithDish(SetmealDTO setmealDTO)
+DishController.java
+ShoppingCartDTO.java
+OrderDetail.java
+ShoppingCart.java
+Function Header: DishController.java void updateDishDetails(DishDTO dishDTO)
+
+Description:
+Update dish details in the system to ensure coherence across controller and service layers.
+
+Reuse Functions or Entities:
+- DishMapper.java void update(Dish dish)
+- DishServiceImpl.java void updateWithFlavor(DishDTO dishDTO)
+
+Parameters:
+dishDTO: The updated dish details to be saved in the system.
+
+Return Value:
+void
+public void updateDishDetails(DishDTO dishDTO) {
+    Dish dish = DishMapper.update(dishDTO);
+    DishServiceImpl.updateWithFlavor(dishDTO);
+}----------------------------------------
+public void updateDishDetails(DishDTO dishDTO) {
+    Dish dish = DishMapper.update(dishDTO);
+    DishServiceImpl.updateWithFlavor(dishDTO);
+    
+    // Update dish details in the database
+    dishRepository.save(dish);
+}

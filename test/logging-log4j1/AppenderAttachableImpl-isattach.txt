@@ -1,0 +1,51 @@
+Check whether appender elements exist in appenderList. If yes, true is returned. Otherwise, false is returned.
+1. Check if appenderList is not empty.
+2. Iterate through appenderList to find appender elements.
+3. Return true if appender elements are found, otherwise false.
+AppenderAttachableImpl.java void addAppender(Appender newAppender)
+AppenderAttachableImpl.java Appender getAppender(String name)
+AppenderAttachable.java Enumeration getAllAppenders()
+AppenderAttachableImpl.java int appendLoopOnAppenders(LoggingEvent event)
+AppenderAttachableImpl.java Enumeration getAllAppenders()
+LoggingEvent.java
+AppenderAttachableImpl.java
+Function Header: boolean checkAppenderExistence()
+
+Description:
+Check whether appender elements exist in appenderList. Return true if found, false otherwise.
+
+Reuse Functions or Entities:
+- AppenderAttachableImpl.java void addAppender(Appender newAppender)
+- AppenderAttachableImpl.java Enumeration getAllAppenders()
+- AppenderAttachableImpl.java Vector appenderList
+
+Parameters:
+None
+
+Return Value:
+- true if appender elements are found in appenderList
+- false if no appender elements are found in appenderList
+```java
+public boolean checkAppenderExistence() {
+    Enumeration appenders = getAllAppenders();
+    while (appenders.hasMoreElements()) {
+        Appender appender = (Appender) appenders.nextElement();
+        if (appenderList.contains(appender)) {
+            return true;
+        }
+    }
+    return false;
+}
+```----------------------------------------
+```java
+public boolean checkAppenderExistence(Appender appender) {
+    Enumeration appenders = getAllAppenders();
+    while (appenders.hasMoreElements()) {
+        Appender currentAppender = (Appender) appenders.nextElement();
+        if (currentAppender.equals(appender)) {
+            return true;
+        }
+    }
+    return false;
+}
+```

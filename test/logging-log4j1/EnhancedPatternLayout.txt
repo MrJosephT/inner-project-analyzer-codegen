@@ -1,0 +1,43 @@
+Formats LoggingEvent as a fixed-format string
+1. Extract timestamp from LoggingEvent and format as "YYYY-MM-DD HH:MM:SS"
+2. Retrieve log level from LoggingEvent and convert to uppercase
+3. Combine timestamp, log level, and message into fixed-format string
+LoggingEvent.java void writeObject(ObjectOutputStream oos) throws java.io.IOException
+EnhancedPatternLayout.java String getConversionPattern()
+EnhancedPatternLayout.java org.apache.log4j.helpers.PatternParser createPatternParser(String pattern)
+EnhancedPatternLayout.java void setConversionPattern(final String conversionPattern)
+LoggingEvent.java String getLoggerName()
+LoggingEvent.java
+EnhancedPatternLayout.java
+Function Header: String formatLoggingEvent(LoggingEvent event)
+
+Description:
+Formats LoggingEvent as a fixed-format string by extracting timestamp, converting log level to uppercase, and combining with message.
+
+Reuse Functions or Entities:
+- LoggingEvent.java void writeObject(ObjectOutputStream oos)
+- LoggingEvent.java String getLoggerName()
+
+Parameters:
+- event: LoggingEvent object to be formatted
+
+Return Value:
+Returns a fixed-format string containing timestamp, log level, and message.
+public String formatLoggingEvent(LoggingEvent event) {
+    String timestamp = event.getTimestamp();
+    String logLevel = event.getLogLevel().toUpperCase();
+    String message = event.getMessage();
+    
+    return timestamp + " " + logLevel + " " + message;
+}----------------------------------------
+public String formatLoggingEvent(LoggingEvent event) {
+    String timestamp = event.getTimestamp();
+    String logLevel = event.getLogLevel().toUpperCase();
+    String message = event.getMessage();
+    
+    // Add formatting for the timestamp
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+    String formattedTimestamp = sdf.format(new Date(Long.parseLong(timestamp)));
+    
+    return formattedTimestamp + " " + logLevel + " " + message;
+}

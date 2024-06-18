@@ -1,0 +1,59 @@
+Find the value corresponding to key in props, then perform variable substitution on the found value. Return the substitution result, or the value in case of exception. 
+1. Find value in props corresponding to key.
+2. Perform variable substitution on the found value.
+3. Return substitution result, or value in case of exception.
+OptionConverter.java String findAndSubst(String key, Properties props)
+OptionConverter.java String substVars(String val, Properties props) throws
+                        IllegalArgumentException
+OptionConverter.java boolean toBoolean(String value, boolean dEfault)
+OptionConverter.java Object instantiateByKey(Properties props, String key, Class superClass,
+				Object defaultValue)
+OptionConverter.java String getSystemProperty(String key, String def)
+OptionConverter.java
+LogLog.java
+Function Header: String findAndSubst(String key, Properties props)
+
+Description:
+Retrieve and substitute property value with variables in a Properties object.
+
+Reuse Functions or Entities:
+- OptionConverter.java String substVars(String val, Properties props)
+- OptionConverter.java Object instantiateByKey(Properties props, String key, Class superClass, Object defaultValue)
+
+Parameters:
+key: The key to search for in the Properties object.
+props: The Properties object to search for the key and perform variable substitution.
+
+Return Value:
+The substitution result after performing variable substitution on the found value, or the original value in case of exception.
+public String findAndSubst(String key, Properties props) {
+    // implementation here
+}----------------------------------------
+public String findAndSubst(String key, Properties props) {
+    String value = props.getProperty(key);
+    
+    if (value != null) {
+        // Perform substitution if the value contains placeholders
+        while (value.contains("${")) {
+            int startIndex = value.indexOf("${");
+            int endIndex = value.indexOf("}", startIndex);
+            
+            if (endIndex != -1) {
+                String placeholder = value.substring(startIndex, endIndex + 1);
+                String placeholderKey = placeholder.substring(2, placeholder.length() - 1);
+                String placeholderValue = props.getProperty(placeholderKey);
+                
+                if (placeholderValue != null) {
+                    value = value.replace(placeholder, placeholderValue);
+                } else {
+                    // If placeholder value is not found, remove the placeholder
+                    value = value.replace(placeholder, "");
+                }
+            } else {
+                break;
+            }
+        }
+    }
+    
+    return value;
+}

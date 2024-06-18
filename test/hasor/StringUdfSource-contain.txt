@@ -1,0 +1,43 @@
+Check whether str contains elements in searchStrArray. If yes, true is returned. If no, false is returned.
+1. Check if str contains any element from searchStrArray.
+2. Return true if any element is found, false otherwise.
+3. Implement the function to compare str with searchStrArray elements.
+StringUdfSource.java boolean containsAny(String str, List<String> searchStrArray)
+StringUdfSource.java boolean contains(String str, String searchStr)
+StringUdfSource.java int indexOfWithStart(String str, String searchStr, int startPos)
+StringUdfSource.java int indexOfIgnoreCase(String str, String searchStr)
+StringUdfSource.java int indexOf(String str, String searchStr)
+StringUdfSource.java
+Function Header: boolean containsAny(String str, List<String> searchStrArray)
+
+Description:
+Check if str contains any element from searchStrArray. Return true if found, false otherwise.
+
+Reuse Functions or Entities:
+- StringUdfSource.java boolean contains(String str, String searchStr)
+
+Parameters:
+str: The input string to be checked.
+searchStrArray: List of search strings to compare with.
+
+Return Value:
+True if any element from searchStrArray is found in str, false otherwise.
+public boolean containsAny(String str, List<String> searchStrArray) {
+    for(String searchStr : searchStrArray) {
+        if(StringUdfSource.contains(str, searchStr)) {
+            return true;
+        }
+    }
+    return false;
+}----------------------------------------
+// This function checks if the input string 'str' contains any of the strings in the 'searchStrArray'
+// If it finds a match, it returns true. Otherwise, it returns false.
+
+public boolean containsAny(String str, List<String> searchStrArray) {
+    for(String searchStr : searchStrArray) {
+        if(StringUdfSource.contains(str, searchStr)) {
+            return true;
+        }
+    }
+    return false;
+}

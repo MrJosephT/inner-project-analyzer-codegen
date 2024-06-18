@@ -1,0 +1,43 @@
+Develop functionality to retrieve dish information, ensuring consistency between the controller and service layers' business logic within the project.
+1. Create endpoint to fetch dish details from database.
+2. Implement service method to retrieve dish information.
+3. Ensure data consistency between controller and service layers.
+SetmealService.java void saveWithDish(SetmealDTO setmealDTO)
+DishMapper.java Dish getById(Long id)
+SetmealServiceImpl.java List<DishItemVO> getDishItemById(Long id)
+DishMapper.java void insert(Dish dish)
+SetmealServiceImpl.java void update(SetmealDTO setmealDTO)
+ShoppingCartDTO.java
+DishController.java
+ShoppingCart.java
+OrderDetail.java
+Function Header: void retrieveDishInformation(Long dishId)
+
+Description:
+Retrieve dish information by dishId for consistency between controller and service layers.
+
+Reuse Functions or Entities:
+- DishMapper.java getById(Long id)
+- SetmealServiceImpl.java getDishItemById(Long id)
+
+Parameters:
+dishId: Unique identifier of the dish to retrieve information.
+
+Return Value:
+Dish object containing the details of the retrieved dish.
+public void retrieveDishInformation(Long dishId) {
+    Dish dish = DishMapper.getById(dishId);
+    // do something with the retrieved dish object
+}----------------------------------------
+public void retrieveDishInformation(Long dishId) {
+    Dish dish = DishMapper.getById(dishId);
+    
+    if(dish != null) {
+        System.out.println("Dish Name: " + dish.getName());
+        System.out.println("Dish Price: " + dish.getPrice());
+        System.out.println("Dish Description: " + dish.getDescription());
+        // Add any other information you want to display
+    } else {
+        System.out.println("Dish not found with ID: " + dishId);
+    }
+}

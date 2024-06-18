@@ -1,0 +1,38 @@
+Check if the named logger exists. If so return its reference, otherwise returns null
+1. Check if named logger exists in the system.
+2. Return reference to logger if it exists.
+3. Return null if named logger does not exist.
+Hierarchy.java Logger exists(String name)
+Hierarchy.java Logger getRootLogger()
+Hierarchy.java Logger getLogger(String name)
+Hierarchy.java void emitNoAppenderWarning(Category cat)
+Logger.java Logger getLogger(Class clazz)
+Logger.java
+Hierarchy.java
+
+Function Header: Logger exists(String name)
+
+Description:
+Check if the named logger exists in the system and return its reference if found, otherwise return null.
+
+Reuse Functions or Entities:
+- Hierarchy.java Logger getLogger(String name)
+
+Parameters:
+name: The name of the logger to check for existence.
+
+Return Value:
+Reference to the named logger if it exists, otherwise null.
+
+public Logger exists(String name) {
+    return Hierarchy.getLogger(name);
+}----------------------------------------
+// This code snippet is using the Apache Log4j library to retrieve a Logger object based on the provided name.
+// Make sure to have the Log4j library added to your project dependencies.
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public Logger exists(String name) {
+    return LogManager.getLogger(name);
+}

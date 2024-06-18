@@ -1,0 +1,7 @@
+{
+    "PointOfTime":"Return the id by concatenating the point and the entity id with id connector",
+    "TimeSeriesUtils":"Follow the dayStep to reformat the time bucket with TIME_BUCKET_FORMATTER.",
+    "FeishuHookCallback":"Put the \"content\" from the  jsonObject to the content",
+    "EBPFProcessServiceHandler":"Convert process properties to the JsonObject.",
+    "ProfileSnapshotDumper":"Load the thread snapshots from the given file in the specified time range,and return the list of those thread snapshots."
+}

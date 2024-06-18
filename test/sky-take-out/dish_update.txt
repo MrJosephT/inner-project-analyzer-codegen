@@ -1,0 +1,7 @@
+public void update(Dish dish) {
+    if (dish.getPrice() > 0) {
+        DishMapper.update(dish);
+    } else {
+        System.out.println("Error: Price must be greater than 0");
+    }
+}

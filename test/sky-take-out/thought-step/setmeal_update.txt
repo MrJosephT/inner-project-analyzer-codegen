@@ -1,0 +1,40 @@
+Refine the system to allow for the updating of set meal details while maintaining coherence between both controller and service layers within the project.
+1. Update meal details in controller layer.
+2. Implement corresponding update logic in service layer.
+3. Ensure data consistency between controller and service layers.
+DishMapper.java void update(Dish dish)
+EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+OrderMapper.java void update(Orders orders)
+SetmealDishMapper.java void update(SetmealDish dish)
+DishServiceImpl.java void updateWithFlavor(DishDTO dishDTO)
+DishFlavor.java
+ShoppingCartDTO.java
+OrderDetail.java
+OrdersSubmitDTO.java
+Function Header: SetmealDishMapper.java void update(SetmealDish dish)
+
+Description:
+Update a dish in a set meal to ensure accurate and up-to-date information for the project.
+
+Reuse Functions or Entities:
+- SetmealDishMapper.java void update(SetmealDish dish)
+
+Parameters:
+dish: The SetmealDish object containing the updated information for the dish in the set meal.
+
+Return Value:
+void
+public void update(SetmealDish dish) {
+    // code to update the dish in the set meal
+}----------------------------------------
+public void update(SetmealDish dish) {
+    for(SetmealDish setmealDish : setMeal.getDishes()) {
+        if(setmealDish.getId() == dish.getId()) {
+            setmealDish.setName(dish.getName());
+            setmealDish.setPrice(dish.getPrice());
+            setmealDish.setDescription(dish.getDescription());
+            // Update any other attributes as needed
+            break;
+        }
+    }
+}

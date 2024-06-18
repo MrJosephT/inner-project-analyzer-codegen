@@ -1,0 +1,9 @@
+void addNewDish(DishDTO dishDTO) {
+    if (dishDTO != null) {
+        DishService.validateAndSave(dishDTO);
+        Dish dish = DishMapper.mapToEntity(dishDTO);
+        DishMapper.insert(dish);
+    } else {
+        System.out.println("Invalid dishDTO provided");
+    }
+}

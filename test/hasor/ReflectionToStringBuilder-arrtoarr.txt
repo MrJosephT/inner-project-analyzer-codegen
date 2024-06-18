@@ -1,0 +1,68 @@
+Return a new array of strings converted from the elements which are not null of the given array,if the size of the array is zero,it will throw an exception.
+1. Check if the size of the given array is zero.
+2. Convert non-null elements of the array into strings.
+3. Return a new array containing the converted strings.
+ReflectionToStringBuilder.java String[] toNoNullStringArray(Collection<?> collection)
+ArrayUtils.java char[] toPrimitive(final Character[] array, final char valueForNull)
+ArrayUtils.java boolean isEmpty(final Object[] array)
+ArrayUtils.java boolean isEmpty(final int[] array)
+ArrayUtils.java boolean isEmpty(final float[] array)
+ReflectionToStringBuilder.java
+ArrayUtils.java
+Function Header: String[] convertNonNullToStringArray(Object[] array)
+
+Description:
+Converts non-null elements of the given array into strings and returns a new array of strings.
+
+Reuse Functions or Entities:
+- ArrayUtils.java boolean isEmpty(final Object[] array)
+
+Parameters:
+array: The input array to convert non-null elements into strings.
+
+Return Value:
+A new array of strings containing the converted non-null elements.
+public String[] convertNonNullToStringArray(Object[] array) {
+    if (ArrayUtils.isEmpty(array)) {
+        return new String[0];
+    }
+    
+    List<String> stringList = new ArrayList<>();
+    for (Object obj : array) {
+        if (obj != null) {
+            stringList.add(obj.toString());
+        }
+    }
+    
+    return stringList.toArray(new String[0]);
+}----------------------------------------
+public String[] convertNonNullToStringArray(Object[] array) {
+    if (ArrayUtils.isEmpty(array)) {
+        return new String[0];
+    }
+    
+    List<String> stringList = new ArrayList<>();
+    for (Object obj : array) {
+        if (obj != null) {
+            stringList.add(obj.toString());
+        }
+    }
+    
+    return stringList.toArray(new String[0]);
+} 
+
+// Additional method to handle converting non-null Integer objects to String
+public String[] convertNonNullIntegerToStringArray(Integer[] array) {
+    if (ArrayUtils.isEmpty(array)) {
+        return new String[0];
+    }
+    
+    List<String> stringList = new ArrayList<>();
+    for (Integer num : array) {
+        if (num != null) {
+            stringList.add(num.toString());
+        }
+    }
+    
+    return stringList.toArray(new String[0]);
+}

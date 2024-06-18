@@ -1,0 +1,70 @@
+Implement the filter function in DefaultBroadcaster, which filters and returns null for the null and abort message in BroadcastAction, otherwise returns the action message.
+1. Filter out null messages in BroadcastAction.
+2. Filter out abort messages in BroadcastAction.
+3. Return action messages from BroadcastAction.
+DefaultBroadcaster.java void notifyOnMessage(Deliver deliver)
+DefaultBroadcaster.java void notifyBroadcastListener()
+BroadcastFilter.java BroadcastAction filter(String broadcasterId, Object originalMessage, Object message)
+DefaultBroadcaster.java boolean perRequestFilter(AtmosphereResource r, Deliver msg)
+LifecycleHandler.java void notifyEmptyListener(DefaultBroadcaster broadcaster)
+DefaultBroadcaster.java
+PoolableBroadcasterFactory.java
+BroadcasterLifeCyclePolicy.java
+BroadcastMessage.java
+Function Header: DefaultBroadcaster.java BroadcastAction filterNullAndAbortMessages(String broadcasterId, Object originalMessage, Object message)
+
+Description:
+Implement the filter function in DefaultBroadcaster to filter out null and abort messages in BroadcastAction.
+
+Reuse Functions or Entities:
+- DefaultBroadcaster.java void notifyOnMessage(Deliver deliver)
+- DefaultBroadcaster.java void notifyBroadcastListener()
+- BroadcastFilter.java BroadcastAction filter(String broadcasterId, Object originalMessage, Object message)
+- DefaultBroadcaster.java boolean perRequestFilter(AtmosphereResource r, Deliver msg)
+
+Parameters:
+- broadcasterId: The ID of the broadcaster for filtering messages.
+- originalMessage: The original message to be filtered.
+- message: The message to be checked and filtered.
+
+Return Value:
+- BroadcastAction: The filtered action message, or null if the message is null or abort.
+```java
+@Override
+public BroadcastAction filterNullAndAbortMessages(String broadcasterId, Object originalMessage, Object message) {
+    BroadcastAction action = filter(broadcasterId, originalMessage, message);
+    
+    if (action == null || action.action() == BroadcastAction.ACTION.ABORT) {
+        return null;
+    }
+    
+    return action;
+}
+```----------------------------------------
+The existing Java code provided is a method that filters out null messages and messages that have an action of ABORT. If the action is either null or ABORT, the method returns null. Otherwise, it returns the original action.
+
+To supplement this code, you can add a comment to describe the purpose of the method:
+
+```java
+/**
+ * Filters out null messages and messages with an action of ABORT.
+ * Returns the original action if it is not null and not ABORT.
+ * 
+ * @param broadcasterId the ID of the broadcaster
+ * @param originalMessage the original message
+ * @param message the message to filter
+ * @return the filtered action or null if the action is null or ABORT
+ */
+@Override
+public BroadcastAction filterNullAndAbortMessages(String broadcasterId, Object originalMessage, Object message) {
+    BroadcastAction action = filter(broadcasterId, originalMessage, message);
+    
+    if (action == null || action.action() == BroadcastAction.ACTION.ABORT) {
+        return null;
+    }
+    
+    return action;
+}
+``` 
+
+This comment provides a brief description of what the method does and documents the parameters and return value. It helps other developers understand the purpose of the method and how to use it correctly.

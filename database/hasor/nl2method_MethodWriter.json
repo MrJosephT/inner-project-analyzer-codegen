@@ -1,0 +1,4 @@
+{
+    "This function returns the default type for a project, which is Character class, used for data processing.": "MethodWriter.java Class<?> getDefaultType()",
+    "This function converts an object to a string and returns its first character, used for data manipulation.": "MethodWriter.java String convertToString(final Object value)"
+}

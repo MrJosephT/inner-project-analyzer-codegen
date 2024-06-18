@@ -1,0 +1,4 @@
+{
+    "int DEFAULT_BUFFER_SIZE=256,int allocSize,ByteBuffer current,List<ByteBuffer> buffers=newArrayList<ByteBuffer>()": "LinkBuffer.java",
+    "int LITTLE_ENDIAN_32_SIZE=4,LITTLE_ENDIAN_64_SIZE=8": "ProtobufOutput.java"
+}

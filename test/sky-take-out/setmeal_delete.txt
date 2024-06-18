@@ -1,0 +1,6 @@
+public String delete(@RequestParam List<Long> ids) {
+    for(Long id : ids) {
+        // code to delete set meal with id
+    }
+    return "Set meals deleted successfully";
+}

@@ -1,0 +1,64 @@
+Refine the system to facilitate the updating of category details, ensuring consistency across both controller and service layers within the project.
+1. Create a method in the service layer to update category details.
+2. Implement corresponding method in the controller layer for consistency.
+3. Ensure data integrity and synchronization between layers during updates.
+DishMapper.java void update(Dish dish)
+CategoryService.java void save(CategoryDTO categoryDTO)
+CategoryMapper.java void insert(Category category)
+CategoryController.java Result<String> save(@RequestBody CategoryDTO categoryDTO)
+CategoryServiceImpl.java void save(CategoryDTO categoryDTO)
+DishController.java
+OrderStatisticsVO.java
+AutoFillConstant.java
+SetmealVO.java
+Function Header: CategoryService.java void update(CategoryDTO categoryDTO)
+
+Description:
+Update category details in the project database for consistency across layers.
+
+Reuse Functions or Entities:
+- CategoryService.java void save(CategoryDTO categoryDTO)
+- CategoryMapper.java void insert(Category category)
+
+Parameters:
+categoryDTO: CategoryDTO object containing updated category details.
+
+Return Value:
+void
+
+---
+
+Function Header: CategoryController.java Result<String> updateCategory(@RequestBody CategoryDTO categoryDTO)
+
+Description:
+Update category details in the project database for consistency across layers.
+
+Reuse Functions or Entities:
+- CategoryController.java Result<String> save(@RequestBody CategoryDTO categoryDTO)
+
+Parameters:
+categoryDTO: CategoryDTO object containing updated category details.
+
+Return Value:
+Result<String> indicating the success or failure of the update operation.
+// CategoryService.java
+void update(CategoryDTO categoryDTO) {
+    // implementation code here
+}
+
+// CategoryController.java
+Result<String> updateCategory(@RequestBody CategoryDTO categoryDTO) {
+    // implementation code here
+}----------------------------------------
+// CategoryService.java
+void update(CategoryDTO categoryDTO) {
+    // implementation code here
+    // Update category in the database using categoryDTO
+}
+
+// CategoryController.java
+Result<String> updateCategory(@RequestBody CategoryDTO categoryDTO) {
+    // implementation code here
+    categoryService.update(categoryDTO);
+    return new Result<>("Category updated successfully", true);
+}

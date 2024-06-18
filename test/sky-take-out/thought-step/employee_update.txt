@@ -1,0 +1,48 @@
+Enhance the system to enable the modification of employee details while maintaining consistency across both controller and service layers within the project.
+1. Create updateEmployeeDetails method in EmployeeController to handle user input.
+2. Implement updateEmployeeDetails method in EmployeeService to update employee details.
+3. Ensure data consistency by validating and updating employee details.
+EmployeeServiceImpl.java void save(EmployeeDTO employeeDTO)
+EmployeeController.java Result save(@RequestBody EmployeeDTO employeeDTO)
+AddressBookService.java void update(AddressBook addressBook)
+JwtTokenUserInterceptor.java boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception
+SetmealService.java void update(SetmealDTO setmealDTO)
+AutoFillConstant.java
+UserController.java
+EmployeeLoginVO.java
+JwtProperties.java
+
+Function Header: EmployeeController.java void updateEmployeeDetails(@RequestBody EmployeeDTO employeeDTO)
+
+Description:
+Update employee details in the project while maintaining consistency across controller and service layers.
+
+Reuse Functions or Entities:
+- EmployeeServiceImpl.java void save(EmployeeDTO employeeDTO
+- EmployeeService.java void update(EmployeeDTO employeeDTO)
+
+Parameters:
+- @RequestBody EmployeeDTO employeeDTO: The employee details to be updated.
+
+Return Value:
+- void: No return value as the function updates employee details.
+```java
+@RestController
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
+
+    @PutMapping("/employee/update")
+    public void updateEmployeeDetails(@RequestBody EmployeeDTO employeeDTO) {
+        employeeService.update(employeeDTO);
+    }
+}
+```----------------------------------------
+```java
+    @PutMapping("/employee/update/{id}")
+    public void updateEmployeeDetails(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO) {
+        employeeDTO.setId(id);
+        employeeService.update(employeeDTO);
+    }
+```

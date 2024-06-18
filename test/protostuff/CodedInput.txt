@@ -1,0 +1,49 @@
+Implement functionality to read a string from a data stream 
+1. Read characters from data stream.
+2. Store characters in a buffer until a complete string.
+3. Return the complete string when encountered a delimiter.
+CodedInput.java byte[] readByteArray() throws IOException
+StringSerializer.java LinkedBuffer writeUTF8OneByteDelimited(final CharSequence str, final int index,
+            final int len, final WriteSession session, LinkedBuffer lb)
+StringSerializer.java LinkedBuffer writeUTF8FixedDelimited(final CharSequence str,
+            final boolean littleEndian, final WriteSession session, LinkedBuffer lb)
+CodedInput.java ByteBuffer readByteBuffer() throws IOException
+CodedInput.java int readRawVarint32(final DataInput input, final byte firstByte) throws IOException
+CodedInput.java
+StringSerializer.java
+Function Header: String readStringFromDataStream(InputStream input, char delimiter)
+
+Description:
+Read characters from data stream, store in buffer until delimiter, return complete string.
+
+Reuse Functions or Entities:
+- CodedInput.java: byte[] buffer, int bufferSize, int bufferSizeAfterLimit, int bufferPos, InputStream input, int lastTag, int packedLimit=0, int totalBytesRetired, int currentLimit=Integer.MAX_VALUE, boolean decodeNestedMessageAsGroup, int sizeLimit=DEFAULT_SIZE_LIMIT, int DEFAULT_SIZE_LIMIT=64<<20, int DEFAULT_BUFFER_SIZE=4096
+
+Parameters:
+input: InputStream - the input stream to read characters from
+delimiter: char - the delimiter to indicate end of string
+
+Return Value:
+String - the complete string read from the data stream until the delimiter is encountered.
+```java
+public String readStringFromDataStream(InputStream input, char delimiter) {
+    // implementation code here
+}
+```----------------------------------------
+```java
+public String readStringFromDataStream(InputStream input, char delimiter) {
+    StringBuilder sb = new StringBuilder();
+    try {
+        int data;
+        while ((data = input.read()) != -1) {
+            if (data == delimiter) {
+                break;
+            }
+            sb.append((char) data);
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return sb.toString();
+}
+```

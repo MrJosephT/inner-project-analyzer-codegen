@@ -1,0 +1,5 @@
+{
+    "Filter next,int DENY=-1,int NEUTRAL=0,int ACCEPT=1": "Filter.java",
+    "long startTime=System.currentTimeMillis(),String fqnOfCategoryClass,Category logger,String categoryName,Priority level,String ndc,Hashtable mdcCopy,boolean ndcLookupRequired=true,boolean mdcCopyLookupRequired=true,Object message,String renderedMessage,String threadName,ThrowableInformation throwableInfo,long timeStamp,LocationInfo locationInfo,long serialVersionUID=-868428216207166145L,Integer[] PARAM_ARRAY=newInteger[1],String TO_LEVEL=\"toLevel\",Class[] TO_LEVEL_PARAMS=newClass[]{int.class},Hashtable methodCache=newHashtable(3)": "LoggingEvent.java",
+    "String STRING_TO_MATCH_OPTION=\"StringToMatch\",String ACCEPT_ON_MATCH_OPTION=\"AcceptOnMatch\",boolean acceptOnMatch=true,String stringToMatch": "StringMatchFilter.java"
+}

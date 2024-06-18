@@ -1,0 +1,55 @@
+Return the string built by this string builder.
+1. Concatenate all stored strings in the string builder.
+2. Return the final concatenated string to the user.
+3. Ensure the string builder is cleared after returning the string.
+ReflectionToStringBuilder.java String toString(Object object, ToStringStyle style, boolean outputTransients)
+ArrayUtils.java String[] addAll(final String[] array1, final String[] array2)
+ReflectionToStringBuilder.java ToStringBuilder reflectionAppendArray(Object array)
+ReflectionToStringBuilder.java String toStringExclude(Object object, String[] excludeFieldNames)
+ReflectionToStringBuilder.java String toStringExclude(Object object, Collection<?> /*String*/ excludeFieldNames)
+ReflectionToStringBuilder.java
+ArrayUtils.java
+Function Header: String buildString()
+
+Description:
+Concatenate all stored strings in the string builder and return the final concatenated string to the user. Ensure the string builder is cleared after returning the string.
+
+Reuse Functions or Entities:
+- ReflectionToStringBuilder.java String toString(Object object, ToStringStyle style, boolean outputTransients)
+- ArrayUtils.java String[] addAll(final String[] array1, final String[] array2)
+- ReflectionToStringBuilder.java ToStringBuilder reflectionAppendArray(Object array)
+- ReflectionToStringBuilder.java String toStringExclude(Object object, String[] excludeFieldNames)
+- ReflectionToStringBuilder.java String toStringExclude(Object object, Collection<?> /*String*/ excludeFieldNames)
+
+Parameters:
+None
+
+Return Value:
+String: The final concatenated string built by the string builder.
+```java
+public String buildString() {
+    String finalString = ReflectionToStringBuilder.toStringExclude(this, ArrayUtils.addAll(reflectionAppendArray(this), new String[]{"excludeField1", "excludeField2"}), true);
+    clearStringBuilder();
+    return finalString;
+}
+```----------------------------------------
+```java
+    public String buildString() {
+        String finalString = ReflectionToStringBuilder.toStringExclude(this, ArrayUtils.addAll(reflectionAppendArray(this), new String[]{"excludeField1", "excludeField2"}), true);
+        clearStringBuilder();
+        return finalString;
+    }
+
+    private String[] reflectionAppendArray(Object object) {
+        Field[] fields = object.getClass().getDeclaredFields();
+        List<String> fieldNames = new ArrayList<>();
+        for (Field field : fields) {
+            fieldNames.add(field.getName());
+        }
+        return fieldNames.toArray(new String[0]);
+    }
+
+    private void clearStringBuilder() {
+        // Add code here to clear any StringBuilder used in the process
+    }
+```

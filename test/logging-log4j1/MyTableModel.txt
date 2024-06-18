@@ -1,0 +1,36 @@
+Compare two events by their timeStamp.
+1. Extract timeStamp from each event.
+2. Compare the timeStamp of the two events.
+3. Determine which event occurred first based on the timeStamp.
+EventDetails.java long getTimeStamp()
+MyTableModel.java boolean matchFilter(EventDetails aEvent)
+MyTableModel.java void setNDCFilter(String aStr)
+MyTableModel.java Object getValueAt(int aRow, int aCol)
+MyTableModel.java void updateFilteredEvents(boolean aInsertedToFront)
+MyTableModel.java
+EventDetails.java
+Function Header: int compareEvents(EventDetails event1, EventDetails event2)
+
+Description:
+Compare two events by their timeStamp to determine which event occurred first.
+
+Reuse Functions or Entities:
+- EventDetails.java long getTimeStamp()
+- Comparator MY_COMP
+
+Parameters:
+event1: EventDetails - The first event to compare.
+event2: EventDetails - The second event to compare.
+
+Return Value:
+- int: Returns a negative integer if event1 occurred before event2, 0 if they occurred at the same time, and a positive integer if event1 occurred after event2.
+public int compareEvents(EventDetails event1, EventDetails event2) {
+    return Long.compare(event1.getTimeStamp(), event2.getTimeStamp());
+}----------------------------------------
+// This method compares two EventDetails objects based on their timestamps
+// Returns a negative integer if event1's timestamp is less than event2's timestamp
+// Returns 0 if event1's timestamp is equal to event2's timestamp
+// Returns a positive integer if event1's timestamp is greater than event2's timestamp
+public int compareEvents(EventDetails event1, EventDetails event2) {
+    return Long.compare(event1.getTimeStamp(), event2.getTimeStamp());
+}

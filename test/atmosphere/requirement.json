@@ -1,0 +1,7 @@
+{
+    "CodeGen-DefaultBroadcaster":"Implement the filter function in DefaultBroadcaster, which filters and returns null for the null and abort message in BroadcastAction, otherwise returns the action message.",
+    "CodeGen-UriPattern":"Implement a URI template matching feature. If there is a match between the URL and the pattern, return the matching result. Otherwise, return null.",
+    "CodeGen-AtmosphereResourceLifecycleInterceptor":"Implement an interceptor within the Atmosphere framework to automatically suspend the corresponding resource based on the request's transport method.",
+    "CodeGen-AtmosphereFramework":"Check if there is already an interceptor in a given list that belongs to the same class as the provided one. Return true if such an interceptor exists; otherwise, return false.",
+    "CodeGen-AtmosphereResourceImpl":"This involves adding an instance of AtmosphereResourceEventListener to a list of listeners associated with the resource. Upon completion, return the AtmosphereResource object that initiated the function call."
+}

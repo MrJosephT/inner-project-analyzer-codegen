@@ -1,0 +1,19 @@
+{
+    "This function allocates a new LinkedBuffer object with a default buffer size for use in the project.": "LinkedBuffer.java LinkedBuffer allocate()",
+    "Allocate a LinkedBuffer of specified size, ensuring it meets minimum requirements for project functionality.": "LinkedBuffer.java LinkedBuffer allocate(int size)",
+    "Allocate a new LinkedBuffer with a specified size and link it to the previous buffer in the project.": "LinkedBuffer.java LinkedBuffer allocate(int size, LinkedBuffer previous)",
+    "This function creates a LinkedBuffer object from a specified byte array, offset, and length.": "LinkedBuffer.java LinkedBuffer wrap(byte[] array, int offset, int length)",
+    "This function takes a byte array buffer and returns a LinkedBuffer object with an optional starting index.": "LinkedBuffer.java LinkedBuffer use(byte[] buffer)",
+    "Creates a LinkedBuffer object from a byte array, ensuring it meets minimum size requirements.": "LinkedBuffer.java LinkedBuffer use(byte[] buffer, int start)",
+    "Function writes data from linked buffer nodes to output stream, returning total content size.": "LinkedBuffer.java int writeTo(final OutputStream out, LinkedBuffer node) throws IOException",
+    "Function writes data from linked buffer to output stream, calculating and returning total content size.": "LinkedBuffer.java int writeTo(final DataOutput out, LinkedBuffer node) throws IOException",
+    "Resets the LinkedBuffer by clearing its contents and setting the offset back to the start position.": "LinkedBuffer.java LinkedBuffer clear()",
+    "Flushes data from buffer to output stream in a write session within a project.": "WriteSession.java int flush(WriteSession session,\n                LinkedBuffer lb,\n                byte[] buf, int offset, int len) throws IOException",
+    "Flushes data from buffer to output stream, handling overflow by writing remaining data to next buffer.": "WriteSession.java int flush(WriteSession session,\n                byte[] buf, int offset, int len,\n                byte[] next, int nextoffset, int nextlen) throws IOException",
+    "Function resets project variables and states to initial values.": "WriteSession.java void reset()",
+    "Clears all data in the current session, resetting it to an empty state.": "WriteSession.java WriteSession clear()",
+    "This function returns the size of a data structure, providing information about the amount of data stored.": "WriteSession.java int getSize()",
+    "Flushes data to output stream or custom handler in a project, handling data writing operations efficiently.": "WriteSession.java int flush(byte[] buf, int offset, int len) throws IOException",
+    "Flushes data to output stream or custom handler in a project, handling buffer and next data.": "WriteSession.java int flush(byte[] buf, int offset, int len,\n            byte[] next, int nextoffset, int nextlen) throws IOException",
+    "Flushes data from LinkedBuffer to output stream or custom handler, returning starting position in buffer.": "WriteSession.java int flush(LinkedBuffer lb,\n            byte[] buf, int offset, int len) throws IOException"
+}

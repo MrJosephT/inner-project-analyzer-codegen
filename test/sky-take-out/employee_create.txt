@@ -1,0 +1,11 @@
+public void addEmployee(EmployeeDTO employeeDTO) {
+    if(employeeDTO != null) {
+        if(employeeDTO.getName() != null && !employeeDTO.getName().isEmpty() && employeeDTO.getAge() > 0) {
+            employeeService.update(employeeDTO);
+        } else {
+            throw new IllegalArgumentException("Employee name and age must be provided");
+        }
+    } else {
+        throw new IllegalArgumentException("EmployeeDTO cannot be null");
+    }
+}

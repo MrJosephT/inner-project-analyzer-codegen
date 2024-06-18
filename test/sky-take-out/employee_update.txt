@@ -1,0 +1,15 @@
+```java
+void updateEmployeeDetails(@RequestBody EmployeeDTO employeeDTO) {
+    Employee existingEmployee = employeeService.findById(employeeDTO.getId());
+    
+    if(existingEmployee != null) {
+        existingEmployee.setName(employeeDTO.getName());
+        existingEmployee.setDepartment(employeeDTO.getDepartment());
+        existingEmployee.setSalary(employeeDTO.getSalary());
+        
+        employeeService.save(existingEmployee);
+    } else {
+        // Handle error or throw exception
+    }
+}
+```

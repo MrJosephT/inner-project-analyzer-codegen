@@ -1,0 +1,17 @@
+public void updateSetmealDetails(SetmealDTO setmealDTO) {
+    // Update set meal details in the system
+    Setmeal setmeal = new Setmeal();
+    setmeal.setId(setmealDTO.getId());
+    setmeal.setName(setmealDTO.getName());
+    setmeal.setDescription(setmealDTO.getDescription());
+    
+    SetmealMapper.update(setmeal); // Update set meal details in the database
+    
+    for(DishDTO dishDTO : setmealDTO.getDishes()) {
+        SetmealDish dish = new SetmealDish();
+        dish.setSetmealId(setmeal.getId());
+        dish.setDishId(dishDTO.getId());
+        
+        SetmealDishMapper.update(dish); // Update set meal dish details in the database
+    }
+}

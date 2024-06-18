@@ -1,0 +1,6 @@
+{
+    "IsomorphicGraphMapping":"Compute and return an identity automorphism for the given graph",
+    "Boxes":"Divide a box into two equal boxes on the x axis",
+    "Distributor":"Return a pair of the list of suffix sum and the sum of all elements of bounds",
+    "Points":"Using TOLERANCE_DOUBLE_COMPARATOR to compare two points for equality,return true the point p1 is equal to another point p2,otherwise return false"
+}

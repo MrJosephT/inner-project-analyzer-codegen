@@ -1,0 +1,4 @@
+public void deleteDish(Long id) {
+    dishFlavorMapper.deleteByDishId(id);
+    dishMapper.deleteById(id);
+}

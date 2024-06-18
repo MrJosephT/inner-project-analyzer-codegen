@@ -1,0 +1,4 @@
+{
+    "LoggerFactory defaultFactory,Vector listeners,Hashtable ht,Logger root,RendererMap rendererMap,int thresholdInt,Level threshold,boolean emittedNoAppenderWarning=false,boolean emittedNoResourceBundleWarning=false,ThrowableRenderer throwableRenderer=null": "Hierarchy.java",
+    "String FQCN=Logger.class.getName()": "Logger.java"
+}

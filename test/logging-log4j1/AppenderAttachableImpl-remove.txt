@@ -1,0 +1,46 @@
+Remove the appender by the given name from the list of appenders.
+1. Identify the appender in the list by its given name.
+2. Remove the identified appender from the list of appenders.
+3. Update the list of appenders without the removed appender.
+AppenderAttachableImpl.java void removeAppender(Appender appender)
+AppenderAttachableImpl.java void addAppender(Appender newAppender)
+AppenderAttachable.java Enumeration getAllAppenders()
+AppenderAttachableImpl.java Enumeration getAllAppenders()
+AppenderAttachableImpl.java void removeAllAppenders()
+LoggingEvent.java
+AppenderAttachableImpl.java
+Function Header: void removeAppenderByName(String appenderName)
+
+Description:
+Remove the appender by the given name from the list of appenders.
+
+Reuse Functions or Entities:
+- AppenderAttachableImpl.java void removeAppender(Appender appender)
+- AppenderAttachableImpl.java Enumeration getAllAppenders()
+
+Parameters:
+appenderName: The name of the appender to be removed from the list.
+
+Return Value:
+None.
+public void removeAppenderByName(String appenderName) {
+    Enumeration<Appender> appenders = getAllAppenders();
+    while (appenders.hasMoreElements()) {
+        Appender appender = appenders.nextElement();
+        if (appender.getName().equals(appenderName)) {
+            removeAppender(appender);
+            break;
+        }
+    }
+}----------------------------------------
+// This method removes an appender with a specific name from the logger
+public void removeAppenderByName(String appenderName) {
+    Enumeration<Appender> appenders = getAllAppenders();
+    while (appenders.hasMoreElements()) {
+        Appender appender = appenders.nextElement();
+        if (appender.getName().equals(appenderName)) {
+            removeAppender(appender); // Remove the appender with the specified name
+            break;
+        }
+    }
+}

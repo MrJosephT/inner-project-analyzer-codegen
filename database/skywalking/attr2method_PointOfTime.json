@@ -1,0 +1,4 @@
+{
+    "int NONE=0,String SERVICE_ID_CONNECTOR=\".\",String SERVICE_ID_PARSER_SPLIT=\"\\\\.\",String ID_CONNECTOR=\"_\",String ID_PARSER_SPLIT=\"\\\\_\",String RELATION_ID_CONNECTOR=\"-\",String RELATION_ID_PARSER_SPLIT=\"\\\\-\",String LINE=\"-\",String UNDERSCORE=\"_\",String COMMA=\",\",String SPACE=\" \",String KEY_VALUE_SPLIT=\",\",String ARRAY_SPLIT=\"|\",String ARRAY_PARSER_SPLIT=\"\\\\|\",String USER_SERVICE_NAME=\"User\",String USER_INSTANCE_NAME=\"User\",String USER_ENDPOINT_NAME=\"User\",String SEGMENT_SPAN_SPLIT=\"S\",String UNKNOWN=\"Unknown\",String EMPTY_STRING=\"\",String POINT=\".\",String DOUBLE_COLONS_SPLIT=\"::\",String BLANK_ENTITY_NAME=\"_blank\",String NON_TLS=\"NONE\",String M_TLS=\"mTLS\",String TLS=\"TLS\"": "Const.java",
+    "long point": "PointOfTime.java"
+}

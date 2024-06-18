@@ -1,0 +1,4 @@
+{
+    "HttpServletRequest request": "StringUtils.java",
+    "Pattern linePattern=Pattern.compile(\"_(\\\\w)\"),Pattern humpPattern=Pattern.compile(\"[A-Z]\")": "StringUdfSource.java"
+}

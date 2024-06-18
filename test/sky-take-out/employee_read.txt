@@ -1,0 +1,8 @@
+public Employee getEmployeeById(Long id) {
+    for(Employee employee : employeeList) {
+        if(employee.getId().equals(id)) {
+            return employee;
+        }
+    }
+    return null;
+}

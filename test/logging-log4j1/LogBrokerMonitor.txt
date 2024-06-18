@@ -1,0 +1,40 @@
+Add a log record message to be displayed in the LogTable, with the SwingUtilities.
+1. Create a method to add a log record message.
+2. Display the log record message in the LogTable.
+3. Use SwingUtilities to update the LogTable with the message.
+LogRecord.java void setLevel(LogLevel level)
+LogRecord.java void setThrown(Throwable thrown)
+LogBrokerMonitor.java void show(final int delay)
+LogRecord.java String toString()
+LogRecord.java LogLevel getLevel()
+CategoryExplorerTree.java
+LogBrokerMonitor.java
+LogRecord.java
+LogTable.java
+Function Header: void addLogRecordMessage(String message)
+
+Description:
+Add a log record message to be displayed in the LogTable using SwingUtilities.
+
+Reuse Functions or Entities:
+- LogTable.java
+- LogRecord.java
+- SwingUtilities
+
+Parameters:
+message: The log record message to be added to the LogTable.
+
+Return Value:
+void
+void addLogRecordMessage(String message) {
+    SwingUtilities.invokeLater(() -> {
+        LogTable.getInstance().addLogRecord(new LogRecord(message));
+    });
+}----------------------------------------
+// This method adds a log record message to the LogTable using SwingUtilities.invokeLater
+// to ensure thread safety
+void addLogRecordMessage(String message) {
+    SwingUtilities.invokeLater(() -> {
+        LogTable.getInstance().addLogRecord(new LogRecord(message));
+    });
+}

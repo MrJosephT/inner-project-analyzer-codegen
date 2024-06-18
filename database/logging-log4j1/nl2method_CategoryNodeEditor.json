@@ -1,0 +1,21 @@
+{
+    "Updates category model with checkbox selection and stops cell editing in project interface.": "CategoryNodeEditor.java void actionPerformed(ActionEvent e)",
+    "Function triggers popup menu on right-click, allowing user to edit node in project interface.": "CategoryNodeEditor.java void mousePressed(MouseEvent e)",
+    "Role: Tree cell editor component for selecting and editing nodes in a hierarchical structure.\nDescription: Allows users to edit and select nodes in a tree structure within the project.": "CategoryNodeEditor.java Component getTreeCellEditorComponent(JTree tree, Object value,\n      boolean selected, boolean expanded,\n      boolean leaf, int row)",
+    "Returns the user object of the last edited node in a tree cell editor.": "CategoryNodeEditor.java Object getCellEditorValue()",
+    "Creates a menu item to display properties dialog for a category node in the project.": "CategoryNodeEditor.java JMenuItem createPropertiesMenuItem(final CategoryNode node)",
+    "Displays properties dialog for a category node in a project, showing relevant information to the user.": "CategoryNodeEditor.java void showPropertiesDialog(CategoryNode node)",
+    "Function to get displayed properties of a category node in a project, including fatal records and total number of records.": "CategoryNodeEditor.java Object getDisplayedProperties(CategoryNode node)",
+    "Show popup menu for a category node with options to remove, select/deselect descendants, expand/collapse, and view properties.": "CategoryNodeEditor.java void showPopup(CategoryNode node, int x, int y)",
+    "Creates a menu item to select all descendant categories in a category tree.": "CategoryNodeEditor.java JMenuItem createSelectDescendantsMenuItem(final CategoryNode node)",
+    "Creates a menu item to deselect all descendant categories in a category tree model.": "CategoryNodeEditor.java JMenuItem createUnselectDescendantsMenuItem(final CategoryNode node)",
+    "Creates a menu item to expand all descendant categories in a project for easier navigation.": "CategoryNodeEditor.java JMenuItem createExpandMenuItem(final CategoryNode node)",
+    "Collapse all descendant categories within a project to improve organization and navigation.": "CategoryNodeEditor.java JMenuItem createCollapseMenuItem(final CategoryNode node)",
+    "This function creates a menu item to remove all empty categories in the project.": "CategoryNodeEditor.java JMenuItem createRemoveMenuItem()",
+    "Function expands all descendants of a given category node in a project's category tree.": "CategoryNodeEditor.java void expandDescendants(CategoryNode node)",
+    "Collapse all descendants of a category node in a project to improve organization and navigation.": "CategoryNodeEditor.java void collapseDescendants(CategoryNode node)",
+    "Function removes unused leaf nodes with no records from category tree in project.": "CategoryNodeEditor.java int removeUnusedNodes()",
+    "Expands a category node in a tree structure within the project interface for better navigation and visibility.": "CategoryNodeEditor.java void expand(CategoryNode node)",
+    "This function returns a TreePath object representing the path of a CategoryNode in the project's tree structure.": "CategoryNodeEditor.java TreePath getTreePath(CategoryNode node)",
+    "Collapse a category node in a tree structure within a project to simplify and organize data display.": "CategoryNodeEditor.java void collapse(CategoryNode node)"
+}

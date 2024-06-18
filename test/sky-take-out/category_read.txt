@@ -1,0 +1,11 @@
+public Result<CategoryDTO> getCategoryById(Long categoryId) {
+    Category category = categoryRepository.findById(categoryId);
+    
+    if(category == null) {
+        return Result.error("Category not found");
+    }
+    
+    CategoryDTO categoryDTO = convertToDTO(category);
+    
+    return Result.success(categoryDTO);
+}

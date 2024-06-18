@@ -1,0 +1,4 @@
+{
+    "int MIN_BUFFER_SIZE=256,int DEFAULT_BUFFER_SIZE=512,byte[] buffer,int start,int offset,LinkedBuffer next": "LinkedBuffer.java",
+    "LinkedBuffer head,LinkedBuffer tail,int size=0,int nextBufferSize,OutputStream out,FlushHandler flushHandler,WriteSink sink": "WriteSession.java"
+}

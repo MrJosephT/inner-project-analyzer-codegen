@@ -1,0 +1,39 @@
+Implement functionality to retrieve employee information, ensuring coherence between the controller and service layers' business logic within the project.
+1. Create employee model with attributes such as name, position, etc.
+2. Implement service method to retrieve employee information by ID.
+3. Create controller endpoint to handle requests for employee information.
+EmployeeMapper.java Employee getByUsername(String username)
+EmployeeMapper.java Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO)
+EmployeeServiceImpl.java void update(EmployeeDTO employeeDTO)
+EmployeeController.java Result update(@RequestBody EmployeeDTO employeeDTO)
+EmployeeServiceImpl.java Employee login(EmployeeLoginDTO employeeLoginDTO)
+EmployeeDTO.java
+EmployeeLoginVO.java
+JwtClaimsConstant.java
+OrdersPageQueryDTO.java
+
+Function Header: EmployeeService.java Employee getEmployeeById(Long id)
+
+Description:
+Retrieve employee information by ID for project tasks and communication.
+
+Reuse Functions or Entities:
+- EmployeeMapper.java getByUsername(String username)
+- EmployeeServiceImpl.java update(EmployeeDTO employeeDTO)
+
+Parameters:
+id: The unique identifier of the employee to retrieve information for.
+
+Return Value:
+EmployeeDTO: The employee information retrieved based on the provided ID.
+public Employee getEmployeeById(Long id) {
+    // implementation code here
+}----------------------------------------
+public Employee getEmployeeById(Long id) {
+    for(Employee employee : employeeList) {
+        if(employee.getId().equals(id)) {
+            return employee;
+        }
+    }
+    return null;
+}

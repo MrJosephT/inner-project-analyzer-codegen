@@ -1,0 +1,4 @@
+{
+    "long serialVersionUID=-1855277817131669241L,double[] coordinates,double[] sides": "Box2D.java",
+    "long serialVersionUID=8176288675989092842L,A first,B second": "Pair.java"
+}

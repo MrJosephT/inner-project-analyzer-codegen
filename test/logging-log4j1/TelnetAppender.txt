@@ -1,0 +1,44 @@
+Haddling a logging event by using layout.format(),and if layout.ignoresThrowable() is true,it will continue to send the StrRep of the event.
+1. Handle logging event using layout.format() method.
+2. Check if layout.ignoresThrowable() is true.
+3. Send StrRep of event if layout.ignoresThrowable() is true.
+Appender.java boolean requiresLayout()
+TelnetAppender.java boolean requiresLayout()
+LoggingEvent.java void readObject(ObjectInputStream ois)
+                        throws java.io.IOException, ClassNotFoundException
+AppenderSkeleton.java void setLayout(Layout layout)
+AppenderSkeleton.java Layout getLayout()
+LoggingEvent.java
+AppenderSkeleton.java
+LogLog.java
+TelnetAppender.java
+Function Header: void handleLoggingEvent(Layout layout, LoggingEvent event)
+
+Description:
+Handling a logging event by formatting it using the specified layout and sending the StrRep if layout.ignoresThrowable() is true.
+
+Reuse Functions or Entities:
+- AppenderSkeleton.java void setLayout(Layout layout)
+- LoggingEvent.java
+- Layout
+
+Parameters:
+- layout: The layout used to format the logging event.
+- event: The logging event to be handled.
+
+Return Value:
+void
+void handleLoggingEvent(Layout layout, LoggingEvent event) {
+    if(layout.ignoresThrowable()) {
+        String formattedLog = layout.format(event);
+        System.out.println(formattedLog);
+    }
+}----------------------------------------
+void handleLoggingEvent(Layout layout, LoggingEvent event) {
+    if(layout.ignoresThrowable()) {
+        String formattedLog = layout.format(event);
+        System.out.println(formattedLog);
+    } else {
+        System.out.println("Layout does not ignore throwable, skipping logging event.");
+    }
+}

@@ -1,0 +1,4 @@
+{
+    "long serialVersionUID=8176288675989092842L,A first,B second": "Pair.java",
+    "Random rng,List<Function<K,Integer>> lowerBounds,List<Function<K,Integer>> upperBounds": "Distributor.java"
+}

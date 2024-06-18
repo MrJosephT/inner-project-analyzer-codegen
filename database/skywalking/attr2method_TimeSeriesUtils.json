@@ -1,0 +1,6 @@
+{
+    "long serialVersionUID=-5171125899451703815L": "DateTime.java",
+    "InternalPrinter iPrinter,InternalParser iParser,Locale iLocale,boolean iOffsetParsed,Chronology iChrono,DateTimeZone iZone,Integer iPivotYear,int iDefaultYear": "DateTimeFormatter.java",
+    "Days ZERO=newDays(0),Days ONE=newDays(1),Days TWO=newDays(2),Days THREE=newDays(3),Days FOUR=newDays(4),Days FIVE=newDays(5),Days SIX=newDays(6),Days SEVEN=newDays(7),Days MAX_VALUE=newDays(Integer.MAX_VALUE),Days MIN_VALUE=newDays(Integer.MIN_VALUE),PeriodFormatter PARSER=ISOPeriodFormat.standard().withParseType(PeriodType.days()),long serialVersionUID=87525275727380865L": "Days.java",
+    "DateTimeFormatter TIME_BUCKET_FORMATTER=DateTimeFormat.forPattern(\"yyyyMMdd\"),DateTime DAY_ONE=TIME_BUCKET_FORMATTER.parseDateTime(\"20000101\"),int DAY_STEP=1,int SUPER_DATASET_DAY_STEP=1": "TimeSeriesUtils.java"
+}

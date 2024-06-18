@@ -1,0 +1,32 @@
+Implement functionality to add new dishes, ensuring alignment with both controller and service layers' business logic within the project.
+1. Create a method in the controller to handle adding new dishes.
+2. Implement a service method to validate and save new dishes.
+3. Update the database with the new dish information.
+DishMapper.java void insert(Dish dish)
+SetmealServiceImpl.java void update(SetmealDTO setmealDTO)
+SetmealDishMapper.java void insertBatch(List<SetmealDish> setmealDishes)
+SetmealController.java Result save(@RequestBody SetmealDTO setmealDTO)
+SetmealDishMapper.java void update(SetmealDish dish)
+ShoppingCartDTO.java
+DishController.java
+DishVO.java
+OrderDetail.java
+Function Header: void addNewDish(DishDTO dishDTO)
+
+Description:
+Add a new dish to the project's database with validation and saving logic.
+
+Reuse Functions or Entities:
+- DishMapper.java void insert(Dish dish)
+- DishController.java DishService dishService
+
+Parameters:
+dishDTO: Data transfer object containing dish information to be added.
+
+Return Value:
+void
+DishMapper.insert(DishMapper.mapToEntity(dishDTO));----------------------------------------
+// Assuming DishMapper.mapToEntity() method converts a DishDTO object to a DishEntity object
+
+DishEntity dishEntity = DishMapper.mapToEntity(dishDTO);
+DishMapper.insert(dishEntity);

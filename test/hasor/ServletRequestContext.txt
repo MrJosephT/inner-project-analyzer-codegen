@@ -1,0 +1,46 @@
+Retrieve the file size from the request. Calculate and return the length of the request content header. If a NumberFormatException occurs during the calculation, return the content length instead.
+1. Retrieve file size from request.
+2. Calculate length of request content header.
+3. Handle NumberFormatException and return content length if needed.
+ServletRequestContext.java String toString()
+ServletRequestContext.java String getContentType()
+ServletRequestContext.java InputStream getInputStream() throws IOException
+ServletRequestContext.java String getCharacterEncoding()
+ServletRequestContext.java
+Function Header: int calculateRequestContentLength(HttpServletRequest request)
+
+Description:
+Calculate the length of the request content header and handle NumberFormatException.
+
+Reuse Functions or Entities:
+- HttpServletRequest request
+
+Parameters:
+- HttpServletRequest request: The request object from which to calculate the content length.
+
+Return Value:
+- The length of the request content header or the content length if a NumberFormatException occurs.
+int calculateRequestContentLength(HttpServletRequest request) {
+    int contentLength = 0;
+    try {
+        contentLength = Integer.parseInt(request.getHeader("Content-Length"));
+    } catch (NumberFormatException e) {
+        // handle NumberFormatException
+    }
+    return contentLength;
+}----------------------------------------
+// Supplementing existing code to handle the case where the Content-Length header is not present
+int calculateRequestContentLength(HttpServletRequest request) {
+    int contentLength = 0;
+    String contentLengthHeader = request.getHeader("Content-Length");
+    if (contentLengthHeader != null) {
+        try {
+            contentLength = Integer.parseInt(contentLengthHeader);
+        } catch (NumberFormatException e) {
+            // handle NumberFormatException
+        }
+    } else {
+        // handle case where Content-Length header is not present
+    }
+    return contentLength;
+}

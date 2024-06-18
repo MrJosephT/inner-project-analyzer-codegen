@@ -1,0 +1,68 @@
+Implement functionality to access category information, ensuring harmonization between the controller and service layers' business logic within the project.
+1. Create category model with attributes: id, name, description.
+2. Implement category service methods: create, update, delete, get.
+3. Develop category controller endpoints for CRUD operations.
+CategoryService.java void save(CategoryDTO categoryDTO)
+CategoryMapper.java void insert(Category category)
+CategoryService.java void update(CategoryDTO categoryDTO)
+CategoryController.java Result<String> save(@RequestBody CategoryDTO categoryDTO)
+CategoryMapper.java Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO)
+SetmealVO.java
+Setmeal.java
+SetmealDTO.java
+Dish.java
+Function Header: CategoryService.java void create(CategoryDTO categoryDTO)
+
+Description:
+Create a new category in the project database.
+
+Reuse Functions or Entities:
+- CategoryService.java void save(CategoryDTO categoryDTO)
+- CategoryMapper.java void insert(Category category)
+
+Parameters:
+categoryDTO: Data transfer object containing category information to be created.
+
+Return Value:
+None
+
+---
+
+Function Header: CategoryService.java void delete(Long categoryId)
+
+Description:
+Delete a category from the project database based on the provided category ID.
+
+Reuse Functions or Entities:
+- CategoryService.java void update(CategoryDTO categoryDTO)
+
+Parameters:
+categoryId: The unique identifier of the category to be deleted.
+
+Return Value:
+None
+
+---
+
+Function Header: CategoryService.java CategoryDTO get(Long categoryId)
+
+Description:
+Retrieve category information from the project database based on the provided category ID.
+
+Reuse Functions or Entities:
+- CategoryMapper.java Page<Category> pageQuery(CategoryPageQueryDTO categoryPageQueryDTO)
+
+Parameters:
+categoryId: The unique identifier of the category to retrieve.
+
+Return Value:
+CategoryDTO: Data transfer object containing the retrieved category information.
+```java
+void create(CategoryDTO categoryDTO);
+void delete(Long categoryId);
+CategoryDTO get(Long categoryId);
+```----------------------------------------
+```java
+void update(CategoryDTO categoryDTO);
+List<CategoryDTO> getAllCategories();
+```
